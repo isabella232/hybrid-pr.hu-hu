@@ -1,0 +1,74 @@
+- name: A hibrid Azure dokumentációja
+  href: index.yml
+- name: Áttekintés
+  items:
+    - name: Hibrid minták és megoldáspéldák
+      href: overview-patterns-solution-examples.md
+- name: Minták
+  items:
+    - name: Egyszeres
+      items:
+        - name: Több felhőre kiterjedő méretezés
+          href: pattern-cross-cloud-scale.md
+        - name: DevOps hibrid CI/CD
+          href: pattern-cicd-pipeline.md
+        - name: Földrajzilag elosztott alkalmazás
+          href: pattern-geo-distributed.md
+        - name: Hibrid relé
+          href: pattern-hybrid-relay.md
+        - name: Rétegzett adatok
+          href: pattern-tiered-data-analytics.md
+        - name: ML-modell betanítása a peremhálózaton
+          href: pattern-train-ml-model-at-edge.md
+    - name: Többszörös
+      items:
+        - name: Több felhőre kiterjedő méretezés (helyszíni adatok)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: Forgalomszámlálás (kiskereskedelem)
+          href: pattern-retail-footfall-detection.md
+        - name: Készlethiány-észlelés a peremhálózaton
+          href: pattern-out-of-stock-at-edge.md
+- name: Megoldás-üzembehelyezési útmutatók
+  items:
+    - name: Több felhőre kiterjedő méretezés
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: Több felhőre kiterjedő méretezés (helyszíni adatok)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: DevOps hibrid CI/CD
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: Forgalomszámlálás (kiskereskedelem)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: Földrajzilag elosztott alkalmazás
+      href: solution-deployment-guide-geo-distributed.md
+    - name: Hibrid kapcsolat
+      href: solution-deployment-guide-connectivity.md
+    - name: Hibrid identitás
+      href: solution-deployment-guide-identity.md
+    - name: Hibrid relé
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: Rétegzett adatok
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: Magas rendelkezésre állású MongoDB
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: Magas rendelkezésre állású SQL Server 2016
+      href: solution-deployment-guide-sql-ha.md
+    - name: Készlethiány a peremhálózaton
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: ML-modellek betanítása a peremhálózaton
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: Alapelvek
+  items:
+    - name: A hibrid alkalmazáskialakítás szempontjai
+      href: overview-app-design-considerations.md
+- name: Kapcsolódó témakörök
+  items:
+    - name: Azure-dokumentáció
+      href: /azure
+    - name: Azure Stack – dokumentáció
+      href: /azure-stack
+- name: További források
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Microsoft Q&A
+      href: /answers/products/

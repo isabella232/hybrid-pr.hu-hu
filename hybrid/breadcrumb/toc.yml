@@ -1,0 +1,11 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+    - name: Hibrid
+      tocHref: /hybrid/
+      topicHref: /hybrid/
+      items:
+        - name: Alkalmazásmegoldások
+          tocHref: /hybrid/app-solutions/
+          topicHref: /hybrid/app-solutions/index

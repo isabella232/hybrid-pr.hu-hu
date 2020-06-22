@@ -1,0 +1,310 @@
+### YamlMime:Hub
+title: A hibrid Azure-felhő dokumentációja
+summary: Segédletek a globális felhőre, adatközpontra és peremhálózatra kiterjedő hibrid megoldások létrehozásához és üzemeltetéséhez.
+brand: azure
+metadata:
+  title: A hibrid Azure-felhő dokumentációja
+  description: Segédletek a globális felhőre, adatközpontra és peremhálózatra kiterjedő hibrid megoldások létrehozásához és üzemeltetéséhez.
+  ms.service: multiple
+  ms.topic: hub-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 06/08/2020
+  ms.openlocfilehash: aa1477386b5c6fe356459e5919da4edd8cf24075
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909691"
+highlightedContent:
+  items:
+  - title: Azure Hybrid Virtual Event – 2020. június 24.
+    itemType: video
+    url: https://info.microsoft.com/ww-registration-azure-hybrid-virtual-event.html
+  - title: 'Build 2020: hibrid foglalkozások'
+    itemType: video
+    url: https://mybuild.microsoft.com/sessions?q=hybrid&g=%255B%2522on-demand%2522%255D
+  - title: 'Build 2020: Azure Arc-foglalkozások'
+    itemType: video
+    url: https://mybuild.microsoft.com/sessions?q=%2522%2520Arc%2520%2522&g=%255B%2522on-demand%2522%255D
+  - title: 'Build 2020: intelligens peremhálózati foglalkozások'
+    itemType: video
+    url: https://mybuild.microsoft.com/sessions?q=%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522
+productDirectory:
+  title: Az Azure hibrid felhőbeli platformja
+  summary: Hibridkompatibilis platformok a hibrid megoldások létrehozásához és üzemeltetéséhez.
+  items:
+  - title: Globális nyilvános/szuverén Azure-felhőplatform.
+    imageSrc: media/index/logo_azure.svg
+    links:
+    - url: /azure
+      text: Azure-szolgáltatások
+  - title: Privát felhőplatformok üzemeltetett, helyszíni és mobil adatközpontokhoz.
+    imageSrc: media/index/azure-stack-hub.svg
+    links:
+    - url: /azure-stack/operator
+      text: Azure Stack Hub
+    - url: /azure-stack/hci
+      text: Azure Stack HCI
+  - title: Intelligens peremhálózati platformok eszközökhöz.
+    imageSrc: media/index/azure-stack-hub.svg
+    links:
+    - url: /azure/iot-edge/
+      text: Azure IoT Edge
+    - url: /azure-sphere
+      text: Azure Sphere
+    - url: /windows/iot-core/
+      text: Windows IoT
+conceptualContent:
+  title: Hibridkompatibilis technológiák
+  summary: Szolgáltatások és termékek hibrid megoldások létrehozásához és üzemeltetéséhez.
+  items:
+  - title: AI + Machine Learning
+    links:
+    - url: /azure/bot-service
+      itemType: overview
+      text: Azure Bot Service
+    - url: /azure/search/
+      itemType: overview
+      text: Azure Cognitive Search
+    - url: /azure/cognitive-services/
+      itemType: overview
+      text: Azure Cognitive Services
+    - url: /azure/machine-learning/
+      itemType: overview
+      text: Azure Machine Learning
+  - title: Containers
+    links:
+    - url: /azure/azure-arc/kubernetes/
+      itemType: overview
+      text: Azure Arc-kompatibilis Kubernetes (előzetes verzió)
+    - url: /azure/container-instances/
+      itemType: overview
+      text: Azure Container Instances
+    - url: /azure/container-registry/
+      itemType: overview
+      text: Azure Container Registry
+    - url: /azure/aks/
+      itemType: overview
+      text: Azure Kubernetes Services az Azure-on
+    - url: /azure-stack/user/azure-stack-kubernetes-aks-engine-overview
+      itemType: overview
+      text: Azure Kubernetes Services az Azure Stack Hubon
+    - url: /azure/docker/
+      itemType: overview
+      text: Docker az Azure rendszeren
+    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+      itemType: overview
+      text: IoT Edge a Kubernetesen
+  - title: Adatbázis
+    links:
+    - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
+      itemType: overview
+      text: Azure Arc-kompatibilis adatszolgáltatások (regisztráció a privát előzetes verzióra)
+    - url: /azure/azure-sql-edge/overview
+      itemType: overview
+      text: Azure SQL Edge (előzetes verzió)
+  - title: Fejlesztés és integráció
+    links:
+    - url: /azure-stack/operator/azure-stack-app-service-overview
+      itemType: overview
+      text: App Service az Azure Stack Hubon
+    - url: /azure/app-service/app-service-hybrid-connections
+      itemType: overview
+      text: Az Azure App Service hibrid kapcsolatai
+    - url: /azure/devops
+      itemType: overview
+      text: Azure DevOps CI-/CD-hez
+    - url: /azure/event-hubs/
+      itemType: overview
+      text: Azure Event Hubs
+    - url: /azure/azure-functions/
+      itemType: overview
+      text: Azure Functions
+    - url: /azure/logic-apps/
+      itemType: overview
+      text: Azure Logic Apps
+    - url: /azure/azure-monitor/app/app-insights-overview
+      itemType: overview
+      text: Azure Monitor – Application Insights
+    - url: /azure/service-fabric/
+      itemType: overview
+      text: Azure Service Fabric
+    - url: /azure-stack/operator/event-hubs-rp-overview
+      itemType: overview
+      text: Event Hubs az Azure Stack Hubon
+  - title: Edge
+    links:
+    - url: /azure/databox-online/data-box-gateway-overview
+      itemType: overview
+      text: Azure Databox Gateway
+    - url: /azure/iot-edge/
+      itemType: overview
+      text: Azure IoT Edge
+    - url: /azure-sphere
+      itemType: overview
+      text: Azure Sphere
+    - url: /azure/databox-online/azure-stack-edge-overview
+      itemType: overview
+      text: Azure Stack Edge
+    - url: /azure/azure-sql-edge/overview
+      itemType: overview
+      text: Azure SQL Edge (előzetes verzió)
+    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+      itemType: overview
+      text: IoT Edge a Kubernetesen
+    - url: /windows/iot-core/
+      itemType: overview
+      text: Windows IoT
+  - title: Identitás és biztonság
+    links:
+    - url: /azure/active-directory/hybrid/
+      itemType: overview
+      text: Hibrid Azure AD-identitás
+    - url: /azure/security-center/
+      itemType: overview
+      text: Azure Security Center
+    - url: /azure/sentinel/
+      itemType: overview
+      text: Azure Sentinel
+    - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
+      itemType: overview
+      text: Hibrid Azure AD-csatlakoztatott eszközök
+  - title: Kezelés
+    links:
+    - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
+      itemType: overview
+      text: Azure Arc-kompatibilis adatszolgáltatások (regisztráció a privát előzetes verzióra)
+    - url: /azure/azure-arc/kubernetes/
+      itemType: overview
+      text: Azure Arc-kompatibilis Kubernetes (előzetes verzió)
+    - url: /azure/azure-arc/
+      itemType: overview
+      text: Azure Arc-kompatibilis kiszolgálók (előzetes verzió)
+    - url: /azure/automation/
+      itemType: overview
+      text: Azure Automation
+    - url: /azure/storage/files/
+      itemType: overview
+      text: Azure Files
+    - url: /azure-monitor
+      itemType: overview
+      text: Azure Monitor
+    - url: /azure/site-recovery/
+      itemType: overview
+      text: Azure Site Recovery
+    - url: /azure-stack/hci/overview
+      itemType: overview
+      text: Hibrid Azure Stack HCI-képességek
+    - url: /windows-server/manage/windows-admin-center/azure/
+      itemType: overview
+      text: A Windows Admin Center hibrid Azure-szolgáltatásai
+  - title: Hálózat
+    links:
+    - url: /azure/networking/edge-zones-overview
+      itemType: overview
+      text: Azure Edge-zónák
+    - url: /azure/expressroute/
+      itemType: overview
+      text: Azure ExpressRoute
+    - url: /azure/load-balancer/
+      itemType: overview
+      text: Azure Load Balancer
+    - url: /azure/private-link/
+      itemType: overview
+      text: Azure Private Link
+    - url: /azure/azure-relay/
+      itemType: overview
+      text: Azure Relay
+    - url: /azure/traffic-manager/
+      itemType: overview
+      text: Azure Traffic Manager
+    - url: /azure/virtual-network/
+      itemType: overview
+      text: Azure Virtual Network
+    - url: /azure/vpn-gateway/
+      itemType: overview
+      text: Azure VPN Gateway
+  - title: Storage
+    links:
+    - url: /azure/avere-vfxt/avere-vfxt-overview
+      itemType: overview
+      text: Azure-hoz készült Avere vFXT
+    - url: /azure/backup/
+      itemType: overview
+      text: Azure Backup
+    - url: /azure/storage/files/storage-files-introduction
+      itemType: overview
+      text: Azure Files
+    - url: /azure/site-recovery/
+      itemType: overview
+      text: Azure Site Recovery
+    - url: /azure/fxt-edge-filer/fxt-overview
+      itemType: overview
+      text: Azure FXT Edge Filer
+additionalContent:
+  sections:
+  - title: Hibrid megoldások
+    items:
+    - title: Hibrid alkalmazásminták és megoldáspéldák
+      links:
+      - url: /hybrid/app-solutions/overview-patterns-solution-examples
+        text: Mik azok a minták és megoldáspéldák?
+      - url: /hybrid/app-solutions/overview-app-design-considerations
+        text: A hibrid alkalmazáskialakítás szempontjai
+    - title: Ismerkedés a hibrid mintákkal
+      links:
+      - url: /hybrid/app-solutions/pattern-cross-cloud-scale
+        text: Több felhőre kiterjedő méretezés
+      - url: /hybrid/app-solutions/pattern-cicd-pipeline
+        text: DevOps hibrid CI/CD
+      - url: /hybrid/app-solutions/pattern-retail-footfall-detection
+        text: Forgalomszámlálás (kiskereskedelem)
+      - url: /hybrid/app-solutions/pattern-geo-distributed
+        text: Földrajzilag elosztott alkalmazás
+    - title: Hibrid megoldáspéldák üzembe helyezése
+      links:
+      - url: /hybrid/app-solutions/solution-deployment-guide-cross-cloud-scaling
+        text: Több felhőre kiterjedő méretezés
+      - url: https://aka.ms/hybriddevopsdeploy
+        text: DevOps hibrid CI/CD
+      - url: /hybrid/app-solutions/solution-deployment-guide-retail-footfall-detection
+        text: Forgalomszámlálás (kiskereskedelem)
+      - url: /hybrid/app-solutions/solution-deployment-guide-geo-distributed
+        text: Földrajzilag elosztott alkalmazás
+  - title: További források
+    items:
+    - title: Általános források
+      links:
+      - url: /azure-stack/operator/compare-azure-azure-stack
+        text: A globális Azure és az Azure Stack
+      - url: https://azure.microsoft.com/blog/topics/hybrid/
+        text: Azure hibrid blog
+      - url: https://azure.microsoft.com/overview/azure-hybrid/
+        text: Az Azure hibrid képességei
+      - url: /learn
+        text: Microsoft Learn – interaktív betanítás
+      - url: /learn/tv/
+        text: Microsoft Learn TV
+    - title: Erőforrások létrehozáshoz és üzemeltetéshez
+      links:
+      - url: /dotnet/azure/
+        text: .NET-fejlesztés Azure-hoz
+      - url: https://github.com/likamrat/azure_arc
+        text: Azure Arc – gyors útmutatók
+      - url: /samples/browse/
+        text: Kódmintaböngésző
+      - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
+        text: Dinamikus skálázás az Azure Stack Hubról az Azure-ba
+      - url: https://labs.iotedge.dev/
+        text: IoT Edge – gyakorlati foglalkozások
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Vision AI fejlesztői készlet
+      - url: /visualstudio/azure/
+        text: Azure-fejlesztés a Visual Studióban
+    - title: Támogatás és egyéb forrásanyagok
+      links:
+      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
+        text: Tanúsítvány az Azure IoT Edge-eszközökkel való használathoz
+      - url: /answers/products/
+        text: Microsoft Q&A-fórumok

@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Hibrid Azure-minták és -megoldások dokumentációja
+summary: Ismerje meg, hogyan használhatja ki a hibrid mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során. Az Azure és az Azure Stack segítségével hibrid alkalmazások fejleszthetők, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
+metadata:
+  title: Hibrid Azure-minták és -megoldások dokumentációja
+  description: Ismerje meg, hogyan használhatja ki a hibrid mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során. Az Azure és az Azure Stack segítségével hibrid alkalmazások fejleszthetők, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909717"
+landingContent:
+- title: A hibrid minták és megoldások ismertetése
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Mik azok a hibrid minták és megoldáspéldák?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: A hibrid alkalmazáskialakítás szempontjai
+      url: overview-app-design-considerations.md
+- title: Ismerkedés a hibrid mintákkal
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Több felhőre kiterjedő méretezés
+      url: pattern-cross-cloud-scale.md
+    - text: DevOps hibrid CI/CD
+      url: pattern-cicd-pipeline.md
+    - text: Forgalomszámlálás (kiskereskedelem)
+      url: pattern-retail-footfall-detection.md
+    - text: Földrajzilag elosztott alkalmazás
+      url: pattern-geo-distributed.md
+- title: Hibrid megoldáspéldák üzembe helyezése
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Több felhőre kiterjedő méretezés
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: DevOps hibrid CI/CD
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: Forgalomszámlálás (kiskereskedelem)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: Földrajzilag elosztott alkalmazás
+      url: solution-deployment-guide-geo-distributed.md
+- title: Kiskereskedelmi forgalomszámlálási forgatókönyv
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Mintázat
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Megoldás-üzembehelyezési útmutató
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: Több felhőre kiterjedő méretezés helyszíni adatokkal – forgatókönyv
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Mintázat
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: Megoldás-üzembehelyezési útmutató
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md

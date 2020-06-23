@@ -541,6 +541,6 @@ Az automatikus forgalmi váltás konfigurálásához kövesse az alábbi lépés
 5. Mentse a kódot, és adja hozzá a Function app URL-címét a megfelelő paraméterekkel a Application Insights riasztási szabály beállításainak **webhook** szakaszához.
 6. A rendszer automatikusan átirányítja a forgalmat, amikor egy Application Insights riasztás következik be.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).

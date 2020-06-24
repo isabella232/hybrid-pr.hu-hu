@@ -64,7 +64,7 @@ Győződjön meg arról, hogy a helyileg telepített alkalmazások magas rendelk
 
 A többfelhős megoldás zökkenőmentes felügyeletet és ismerős felületet biztosít a környezetek között. A PowerShell használata a platformok közötti felügyelethez ajánlott.
 
-## <a name="cross-cloud-scaling"></a>Felhőn átívelő méretezés
+## <a name="cross-cloud-scaling"></a>Több felhőre kiterjedő méretezés
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Egyéni tartomány beszerzése és a DNS konfigurálása
 
@@ -359,6 +359,6 @@ A kiadás definíciójának létrehozása az alkalmazás-létrehozási folyamat 
 
 A rugalmas és robusztus többfelhős szolgáltatás adatbiztonságot, biztonsági mentést és redundanciát, egységes és gyors rendelkezésre állást, méretezhető tárolást és elosztást, valamint geo-kompatibilis útválasztást biztosít. Ez a manuálisan aktivált folyamat megbízható és hatékony terhelést biztosít a szolgáltatott webalkalmazások között, és azonnal elérhetővé teszi a kritikus fontosságú adatmennyiséget.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).

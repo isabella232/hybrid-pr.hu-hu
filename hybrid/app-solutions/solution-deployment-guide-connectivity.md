@@ -39,7 +39,7 @@ A hibrid kapcsolat központi telepítésének létrehozásához néhány összet
 - Ha még nincs Azure-előfizetése, kezdés előtt hozzon létre egy [ingyenes fiókot](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Hozzon létre egy [webalkalmazást](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) az Azure-ban. Jegyezze fel a webalkalmazás URL-címét, mert szüksége lesz rá a megoldásban.
 
-### <a name="azure-stack-hub"></a>Azure Stack hub
+### <a name="azure-stack-hub"></a>Azure Stack Hub
 
 Egy Azure OEM/Hardware partner üzembe helyezhet egy éles Azure Stack hubot, és minden felhasználó telepíthet egy Azure Stack Development Kit (ASDK).
 
@@ -210,6 +210,6 @@ A következő lépésekkel hozhat létre helyek közötti VPN-kapcsolatot a virt
 
 A kapcsolatot a virtuális hálózati átjáró **kapcsolatok** lapján tekintheti meg. Az állapot az *ismeretlentől* a *csatlakozáshoz*, majd a *sikeres*művelethez fog esni.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).

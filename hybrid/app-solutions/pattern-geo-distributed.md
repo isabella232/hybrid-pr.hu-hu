@@ -74,7 +74,7 @@ A minta zökkenőmentes felügyeletet és ismerős felületet biztosít a körny
 - A nagy léptékű követelmények az alkalmazások horizontális felskálázásával hajthatók végre, több alkalmazás üzembe helyezése egyetlen régióban és régiókban a szélsőséges terhelési követelmények kezelése érdekében.
 - Az alkalmazások számára elérhetőnek kell lennie, és az ügyfelek kéréseire is reagálni kell, még az egyrégiós kimaradások esetében is.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 További információ a cikkben bemutatott témakörökről:
 

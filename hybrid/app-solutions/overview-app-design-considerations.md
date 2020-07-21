@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911116"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477218"
 ---
-# <a name="hybrid-app-design-considerations"></a>Hibrid alkalmazások kialakításával kapcsolatos szempontok
+# <a name="hybrid-app-design-considerations"></a>A hibrid alkalmazáskialakítás szempontjai
 
 Microsoft Azure az egyetlen konzisztens hibrid felhő. Lehetővé teszi a fejlesztési beruházások felépítését, és lehetővé teszi az olyan alkalmazások használatát, amelyek a globális Azure-ra, a szuverén Azure-felhőre és a Azure Stackra is kiterjedhetnek, ami az Azure kiterjesztése az adatközpontban. A felhőkre kiterjedő alkalmazásokat *hibrid alkalmazásoknak*is nevezzük.
 
-Az [*Azure-alkalmazás architektúrájának útmutatója*](https://docs.microsoft.com/azure/architecture/guide) a skálázható, rugalmas és nagyfokú rendelkezésre állású alkalmazások tervezésének strukturált megközelítését ismerteti. Az [*Azure Application Architecture útmutatóban*](https://docs.microsoft.com/azure/architecture/guide) ismertetett megfontolások egyformán érvényesek azokra az alkalmazásokra, amelyek egyetlen felhőhöz lettek kialakítva, és a felhőkre kiterjedő alkalmazásokhoz.
+Az [*Azure-alkalmazás architektúrájának útmutatója*](/azure/architecture/guide) a skálázható, rugalmas és nagyfokú rendelkezésre állású alkalmazások tervezésének strukturált megközelítését ismerteti. Az [*Azure Application Architecture útmutatóban*](/azure/architecture/guide) ismertetett megfontolások egyformán érvényesek azokra az alkalmazásokra, amelyek egyetlen felhőhöz lettek kialakítva, és a felhőkre kiterjedő alkalmazásokhoz.
 
-Ez a cikk az [*Azure Application*](https://docs.microsoft.com/azure/architecture/guide/) [ *Architecture útmutatójában*](https://docs.microsoft.com/azure/architecture/guide/) ismertetett [*szoftverek minőségének pilléreit*](https://docs.microsoft.com/azure/architecture/guide/pillars) fokozza, különös tekintettel a hibrid alkalmazások tervezésére. Emellett felvesszük az *elhelyezési* oszlopokat, mivel a hibrid alkalmazások nem kizárólagosak egyetlen felhőben vagy egy helyszíni adatközpontban.
+Ez a cikk az [*Azure Application*](/azure/architecture/guide/) [ *Architecture útmutatójában*](/azure/architecture/guide/) ismertetett [*szoftverek minőségének pilléreit*](/azure/architecture/guide/pillars) fokozza, különös tekintettel a hibrid alkalmazások tervezésére. Emellett felvesszük az *elhelyezési* oszlopokat, mivel a hibrid alkalmazások nem kizárólagosak egyetlen felhőben vagy egy helyszíni adatközpontban.
 
 A hibrid forgatókönyvek nagy mértékben eltérnek a fejlesztéshez rendelkezésre álló erőforrásokkal, és olyan szempontokat is figyelembe vesznek, mint például a földrajz, a biztonság, az Internet-hozzáférés és egyéb megfontolások. Bár ez az útmutató nem tudja enumerálni az adott szempontokat, néhány kulcsfontosságú irányelvet és ajánlott eljárásokat is megadhat. A hibrid alkalmazások architektúrájának tervezése, konfigurálása, üzembe helyezése és karbantartása sok olyan kialakítási szempontot foglal magába, amelyek nem ismertek az Ön számára.
 
@@ -69,7 +69,7 @@ Minden egyes összetevő esetében értékelje ki az egyes oszlopok jellemzőit.
 | **Pillér** | **Leírás** |
 | ----------- | --------------------------------------------------------- |
 | Elhelyezés  | Az összetevők stratégiai elhelyezése a hibrid alkalmazásokban. |
-| Méretezhetőség  | A rendszer megnövekedett terhelés kezelésére vonatkozó képessége. |
+| Skálázhatóság  | A rendszer megnövekedett terhelés kezelésére vonatkozó képessége. |
 | Rendelkezésre állás  | A hibrid alkalmazások működésének és működésének aránya. |
 | Rugalmasság | A hibrid alkalmazások helyreállításának lehetősége. |
 | Kezelhetőség | A rendszert termelési állapotban tartó működési folyamatok. |
@@ -93,7 +93,7 @@ Az elhelyezés a helymeghatározási összetevők fontos feladata, hogy a lehet�
 
 **Ellenőrizze a szükséges helyet.** Győződjön meg arról, hogy az alkalmazás vagy annak összetevői szükségesek a-ben való működéséhez, vagy az adott felhőre vonatkozó tanúsítvány megköveteléséhez. Ebbe beletartozhatnak a vállalat szuverenitási követelményei, vagy törvény által diktáltak. Azt is állapítsa meg, hogy egy adott helyhez vagy területi beállításhoz van-e szükség helyszíni műveletekre.
 
-**Csatlakozási függőségek megállapítása.** A szükséges helyszínek és egyéb tényezők az összetevők közötti kapcsolati függőségeket is diktálják. Az összetevők elhelyezésekor határozza meg az optimális kapcsolatot és biztonságot a közöttük zajló kommunikációhoz. A lehetőségek közé tartozik a [ *VPN*, a](https://docs.microsoft.com/azure/vpn-gateway/) [ *ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) és a [ *hibrid kapcsolatok*.](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Csatlakozási függőségek megállapítása.** A szükséges helyszínek és egyéb tényezők az összetevők közötti kapcsolati függőségeket is diktálják. Az összetevők elhelyezésekor határozza meg az optimális kapcsolatot és biztonságot a közöttük zajló kommunikációhoz. A lehetőségek közé tartozik a [ *VPN*, a](/azure/vpn-gateway/) [ *ExpressRoute*](/azure/expressroute/) és a [ *hibrid kapcsolatok*.](/azure/app-service/app-service-hybrid-connections)
 
 **A platform képességeinek kiértékelése.** Az egyes alkalmazás-összetevőknél ellenőrizze, hogy az alkalmazás-összetevőhöz szükséges erőforrás-szolgáltató elérhető-e a felhőben, és hogy a sávszélesség képes-e megfelelni a várt átviteli sebességnek és a késési követelményeknek.
 
@@ -105,11 +105,11 @@ Az elhelyezés a helymeghatározási összetevők fontos feladata, hogy a lehet�
 
 **A forgalmi folyamatok szabályozása.** Kezelje a csúcsérték-használatot, valamint a személyes azonosításra alkalmas adatokra vonatkozó megfelelő és biztonságos kommunikációt, ha az előtér egy nyilvános felhőben érhető el.
 
-## <a name="scalability"></a>Méretezhetőség
+## <a name="scalability"></a>Skálázhatóság
 
 A méretezhetőség a rendszer azon képessége, hogy az alkalmazás megnövekedett terhelését kezelje, ami az idő múlásával változhat, ahogy más tényezők és erők a célközönség méretét, valamint az alkalmazás méretét és hatókörét is érintik.
 
-Ennek az oszlopnak a fő vitájában lásd: [*skálázhatóság*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) az architektúra kiválóságának öt pillérében.
+Ennek az oszlopnak a fő vitájában lásd: [*skálázhatóság*](/azure/architecture/guide/pillars#scalability) az architektúra kiválóságának öt pillérében.
 
 A hibrid alkalmazások horizontális skálázási megközelítése lehetővé teszi, hogy további példányokat adjon hozzá az igények kielégítéséhez, majd tiltsa le őket a csendesebb időszakok során.
 
@@ -155,7 +155,7 @@ Ennek az oszlopnak a fő vitájában a [*rendelkezésre állást*](/azure/archit
 
 A rugalmasság lehetővé teszi, hogy egy hibrid alkalmazás és rendszer helyreállítsa a hibákat, és folytassa a működést. A rugalmasság célja, hogy az alkalmazást egy hiba bekövetkezése után teljesen működőképes állapotba adja vissza. A rugalmassági stratégiák olyan megoldások, mint a biztonsági mentés, a replikálás és a vész-helyreállítás.
 
-Ennek az oszlopnak a fő vitájában lásd: [*rugalmasság*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) az architektúra kiválóságának öt pillérében.
+Ennek az oszlopnak a fő vitájában lásd: [*rugalmasság*](/azure/architecture/guide/pillars#resiliency) az architektúra kiválóságának öt pillérében.
 
 ### <a name="resiliency-checklist"></a>Rugalmasságra vonatkozó ellenőrzőlista
 
@@ -201,7 +201,7 @@ A figyelést igénylő alkalmazás részeinek meghatározása.
 
 A biztonság a felhőalapú alkalmazások egyik elsődleges szempontja, és még fontosabbá válik a hibrid felhőalapú alkalmazásokhoz.
 
-Ennek az oszlopnak a fő vitájában lásd: [*Biztonság*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) az architektúra kiválóságának öt pillérében.
+Ennek az oszlopnak a fő vitájában lásd: [*Biztonság*](/azure/architecture/guide/pillars#security) az architektúra kiválóságának öt pillérében.
 
 ### <a name="security-checklist"></a>Biztonsági ellenőrzőlista
 
@@ -225,9 +225,9 @@ Ez a cikk azon elemek listáját tartalmazza, amelyeket fontos figyelembe venni 
 
 Úgy tűnhet, mint egy időigényes feladat, de a beruházások megtérülését egyszerűen megteheti, ha az alkalmazást ezen oszlopok alapján tervezik.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-További információkért lásd a következőket:
+További információkat találhat az alábbi forrásokban:
 
 - [Hibrid felhő](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Hibrid felhőalapú alkalmazások](https://azure.microsoft.com/solutions/hybrid-cloud-app/)

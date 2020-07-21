@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911523"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477337"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Felhőben futó alkalmazások üzembe helyezése az Azure-ban és Azure Stack hub használatával
 
@@ -52,7 +52,7 @@ Ebben a megoldásban egy példaként szolgáló környezetet fog kiépíteni a k
 
 ## <a name="issues-and-considerations"></a>Problémák és megfontolandó szempontok
 
-### <a name="scalability"></a>Méretezhetőség
+### <a name="scalability"></a>Skálázhatóság
 
 A többfelhős méretezés kulcsfontosságú összetevője az, hogy a nyilvános és a helyszíni felhőalapú infrastruktúra között azonnali és igény szerinti skálázást lehessen biztosítani, amely konzisztens és megbízható szolgáltatást biztosít.
 
@@ -68,7 +68,7 @@ A többfelhős megoldás zökkenőmentes felügyeletet és ismerős felületet b
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Egyéni tartomány beszerzése és a DNS konfigurálása
 
-Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Office 365/External DNS-rekordok [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)adja hozzá.
+Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Office 365/External DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)adja hozzá.
 
 1. Egyéni tartomány regisztrálása nyilvános regisztrálóval.
 2. Jelentkezzen be a tartomány tartománynév-regisztrálójába. A DNS-frissítések elvégzéséhez egy jóváhagyott rendszergazdára lehet szükség.
@@ -97,7 +97,7 @@ Azure Repos
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Saját tulajdonú webalkalmazások létrehozása a App Services mindkét felhőben
 
-1. Szerkessze a **webalkalmazás. csproj** fájlt. Válassza ki `Runtimeidentifier` és adja hozzá a elemet `win10-x64` . (Lásd az [önálló központi telepítési](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) dokumentációt.)
+1. Szerkessze a **webalkalmazás. csproj** fájlt. Válassza ki `Runtimeidentifier` és adja hozzá a elemet `win10-x64` . (Lásd az [önálló központi telepítési](/dotnet/core/deploying/deploy-with-vs#simpleSelf) dokumentációt.)
 
     ![Webalkalmazás-projektfájl szerkesztése](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Azure Repos
 
     ![Kód hozzáadása a webalkalmazáshoz](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Futtassa a buildet. A [saját üzemeltetésű üzembe helyezési](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) folyamat az Azure-ban és Azure stack hub-on futó összetevőket teszi közzé.
+3. Futtassa a buildet. A [saját üzemeltetésű üzembe helyezési](/dotnet/core/deploying/deploy-with-vs#simpleSelf) folyamat az Azure-ban és Azure stack hub-on futó összetevőket teszi közzé.
 
 ## <a name="use-an-azure-hosted-agent"></a>Azure-beli üzemeltetett ügynök használata
 
@@ -211,7 +211,7 @@ Az Azure-folyamatok és az Azure DevOps-szolgáltatások kiválóan konfigurálh
 21. Mentse az összes módosítást.
 
 > [!Note]  
-> Előfordulhat, hogy a feladatok egyes beállításai automatikusan [környezeti változókként](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) vannak definiálva, amikor kiadási definíciót hoz létre egy sablonból. Ezek a beállítások nem módosíthatók a feladat beállításaiban. Ehelyett a szülő környezeti elemet kell kiválasztani a beállítások szerkesztéséhez.
+> Előfordulhat, hogy a feladatok egyes beállításai automatikusan [környezeti változókként](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) vannak definiálva, amikor kiadási definíciót hoz létre egy sablonból. Ezek a beállítások nem módosíthatók a feladat beállításaiban. Ehelyett a szülő környezeti elemet kell kiválasztani a beállítások szerkesztéséhez.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Közzététel Azure Stack hub-on a Visual Studióval
 
@@ -254,7 +254,7 @@ A felhőben való üzembe helyezéshez használjon [Azure Resource Manager sablo
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Saját tulajdonú webalkalmazások létrehozása a App Services mindkét felhőben
 
-1. Szerkessze a **webalkalmazás. csproj** fájlt: válassza ki `Runtimeidentifier` , majd adja hozzá a elemet `win10-x64` . További információ: [önálló telepítési](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) dokumentáció.
+1. Szerkessze a **webalkalmazás. csproj** fájlt: válassza ki `Runtimeidentifier` , majd adja hozzá a elemet `win10-x64` . További információ: [önálló telepítési](/dotnet/core/deploying/deploy-with-vs#simpleSelf) dokumentáció.
 
 2. Az Team Explorer segítségével keresse meg a kódot az Azure Reposban.
 
@@ -268,7 +268,7 @@ A felhőben való üzembe helyezéshez használjon [Azure Resource Manager sablo
 
 3. Az **argumentumokban**adja hozzá az **-r win10-x64** kódot. Ez a kiegészítés szükséges a .NET Core-ban lévő, önálló telepítés elindításához.
 
-4. Futtassa a buildet. A [saját üzemeltetésű üzembe helyezési](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) folyamat olyan összetevőket tesz közzé, amelyek az Azure-ban és a Azure stack hub-ban is futtathatók.
+4. Futtassa a buildet. A [saját üzemeltetésű üzembe helyezési](/dotnet/core/deploying/deploy-with-vs#simpleSelf) folyamat olyan összetevőket tesz közzé, amelyek az Azure-ban és a Azure stack hub-ban is futtathatók.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Azure-beli üzemeltetett Build-ügynök használata
 
@@ -329,7 +329,7 @@ A kiadás definíciójának létrehozása az alkalmazás-létrehozási folyamat 
 23. Mentse az összes módosítást.
 
 > [!Note]  
-> A kiadási feladatok egyes beállításai automatikusan [környezeti változókként](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) vannak definiálva a kiadási definíciók sablonból való létrehozásakor. Ezek a beállítások nem módosíthatók a feladat beállításaiban, de módosíthatók a szülő környezeti elemekben.
+> A kiadási feladatok egyes beállításai automatikusan [környezeti változókként](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) vannak definiálva a kiadási definíciók sablonból való létrehozásakor. Ezek a beállítások nem módosíthatók a feladat beállításaiban, de módosíthatók a szülő környezeti elemekben.
 
 ## <a name="create-a-release"></a>Kiadás létrehozása
 
@@ -361,4 +361,4 @@ A rugalmas és robusztus többfelhős szolgáltatás adatbiztonságot, biztonsá
 
 ## <a name="next-steps"></a>További lépések
 
-- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).
+- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](/azure/architecture/patterns).

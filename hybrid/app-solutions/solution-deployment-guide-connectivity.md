@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 0e1a0fc4fb4110fdb406d4b4b2e72abb8f5412c9
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910865"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477286"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Hibrid felhőalapú kapcsolat konfigurálása az Azure és az Azure Stack hub használatával
 
@@ -37,7 +37,7 @@ A hibrid kapcsolat központi telepítésének létrehozásához néhány összet
 ### <a name="azure"></a>Azure
 
 - Ha még nincs Azure-előfizetése, kezdés előtt hozzon létre egy [ingyenes fiókot](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Hozzon létre egy [webalkalmazást](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) az Azure-ban. Jegyezze fel a webalkalmazás URL-címét, mert szüksége lesz rá a megoldásban.
+- Hozzon létre egy [webalkalmazást](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) az Azure-ban. Jegyezze fel a webalkalmazás URL-címét, mert szüksége lesz rá a megoldásban.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -69,7 +69,7 @@ A hibrid felhőalapú kapcsolatok konfigurálásának megkezdése előtt győző
 
 #### <a name="solution-example-values"></a>Megoldási példa értékei
 
-A megoldás példái a következő értékeket használják. Ezekkel az értékekkel létrehozhat egy tesztkörnyezetben, vagy megtekintheti őket a példák jobb megismeréséhez. További információ a VPN Gateway beállításairól: [Tudnivalók a VPN Gateway beállításairól](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
+A megoldás példái a következő értékeket használják. Ezekkel az értékekkel létrehozhat egy tesztkörnyezetben, vagy megtekintheti őket a példák jobb megismeréséhez. További információ a VPN Gateway beállításairól: [Tudnivalók a VPN Gateway beállításairól](/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
 
 A kapcsolatok specifikációi:
 
@@ -99,7 +99,7 @@ Hálózati és alhálózat IP-címei:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Virtuális hálózat létrehozása a globális Azure-ban és Azure Stack hub-ban
 
-A következő lépésekkel hozhat létre virtuális hálózatot a portál használatával. Ha ezt a cikket csak megoldásként használja, használhatja ezeket a [példákat](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) . Ha ezt a cikket egy éles környezet konfigurálására használja, cserélje le a példában szereplő beállításokat a saját értékeire.
+A következő lépésekkel hozhat létre virtuális hálózatot a portál használatával. Ha ezt a cikket csak megoldásként használja, használhatja ezeket a [példákat](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) . Ha ezt a cikket egy éles környezet konfigurálására használja, cserélje le a példában szereplő beállításokat a saját értékeire.
 
 > [!IMPORTANT]
 > Győződjön meg arról, hogy nincs átfedésben az Azure-beli IP-címek vagy Azure Stack hub-vNet.
@@ -212,4 +212,4 @@ A kapcsolatot a virtuális hálózati átjáró **kapcsolatok** lapján tekinthe
 
 ## <a name="next-steps"></a>További lépések
 
-- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).
+- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](/azure/architecture/patterns).

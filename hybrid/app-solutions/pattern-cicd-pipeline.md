@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: e26056a9507a7467473b009725d4f210d9d59ec8
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911117"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477235"
 ---
 # <a name="devops-pattern"></a>DevOps minta
 
@@ -47,11 +47,11 @@ A DevOps minta az üzemelő példányok közötti konzisztencia biztosítására
 - Az üzembe helyezési paraméterek az összes cél környezetben működnek?
 - Az erőforrás-specifikus tulajdonságok elérhetők az összes cél felhőkben?
 
-További információ: Azure Resource Manager- [sablonok fejlesztése a felhő konzisztenciája](https://docs.microsoft.com/azure/azure-resource-manager/templates-cloud-consistency)érdekében.
+További információ: Azure Resource Manager- [sablonok fejlesztése a felhő konzisztenciája](/azure/azure-resource-manager/templates-cloud-consistency)érdekében.
 
 Emellett vegye figyelembe a következő szempontokat is a minta megvalósításának eldöntése során:
 
-### <a name="scalability"></a>Méretezhetőség
+### <a name="scalability"></a>Skálázhatóság
 
 A központi telepítési automatizálási rendszerek a DevOps-mintázatok kulcsfontosságú vezérlői pontja. A megvalósítások eltérőek lehetnek. A megfelelő kiszolgáló méretének kiválasztása a várt munkaterhelés méretétől függ. A virtuális gépek drágábbak, mint a tárolók. Ha azonban tárolókat használna a skálázáshoz, a build-folyamatoknak tárolókkal kell futnia.
 
@@ -85,7 +85,7 @@ Ez a minta nem ajánlott a következő helyzetekben:
 - Ha nem automatizálható az infrastruktúra, az erőforrások, a konfiguráció, az identitás és a biztonsági feladatok kiépítése.
 - Ha a csapatok nem férnek hozzá a hibrid felhőalapú erőforrásokhoz a folyamatos integráció/folyamatos fejlesztési (CI/CD) megközelítés megvalósításához.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 További információ a cikkben bemutatott témakörökről:
 

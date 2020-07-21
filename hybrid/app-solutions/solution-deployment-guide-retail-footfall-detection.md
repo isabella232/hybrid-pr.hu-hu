@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6913cc522da447092dad0af24e148a3b2576495c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910893"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477167"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>AI-alapú lépés hangja-észlelési megoldás üzembe helyezése az Azure és Azure Stack hub használatával
 
@@ -44,7 +44,7 @@ Az üzembe helyezési útmutató első lépéseinek megkezdése előtt győződj
 - Hozzon létre két egyszerű szolgáltatásnevet a címtárban:
   - Egy beállítás az Azure-erőforrásokkal való használatra, az Azure-előfizetések hatókörében való hozzáféréssel.
   - Az egyik beállítása Azure Stack hub-erőforrásokkal való használatra, a Azure Stack hub-előfizetés hatókörében való hozzáféréssel.
-  - Az egyszerű szolgáltatások létrehozásával és a hozzáférés engedélyezésével kapcsolatos további tudnivalókért lásd: [alkalmazás-identitás használata az erőforrásokhoz való hozzáféréshez](/azure-stack/operator/azure-stack-create-service-principals.md). Ha szívesebben szeretné használni az Azure CLI-t, tekintse meg [Az Azure-szolgáltatás létrehozása az Azure CLI-vel](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)című témakört.
+  - Az egyszerű szolgáltatások létrehozásával és a hozzáférés engedélyezésével kapcsolatos további tudnivalókért lásd: [alkalmazás-identitás használata az erőforrásokhoz való hozzáféréshez](/azure-stack/operator/azure-stack-create-service-principals.md). Ha szívesebben szeretné használni az Azure CLI-t, tekintse meg [Az Azure-szolgáltatás létrehozása az Azure CLI-vel](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)című témakört.
 - Azure Cognitive Services üzembe helyezése az Azure-ban vagy Azure Stack hub-ban.
   - Először is tájékozódjon [Cognitive Servicesról](https://azure.microsoft.com/services/cognitive-services/).
   - Ezután látogasson el az [Azure Cognitive Services üzembe helyezése Azure stack hubhoz](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) az Azure stack hub-beli Cognitive Services üzembe helyezéséhez. Először regisztrálnia kell az előzetes verzióhoz való hozzáféréshez.
@@ -192,7 +192,7 @@ porter uninstall footfall-cloud –tag intelligentedge/footfall-cloud-deployment
 porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployment:0.1.0 –creds footfall-camera-deployment –param-file "path-to-camera-parameters-file.txt"
 ```
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - További információ a [hibrid alkalmazások kialakításával kapcsolatos szempontokról]. (overview-app-design-considerations.md)
 - Tekintse át és javasolja [a githubon a minta kódjának](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis)tökéletesítését.

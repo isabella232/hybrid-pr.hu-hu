@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911046"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477082"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>SQL Server 2016 rendelkezésre állási csoport üzembe helyezése az Azure-ban és Azure Stack hub-ban
 
-Ez a cikk végigvezeti egy olyan alapszintű magas rendelkezésre állású (HA) SQL Server 2016 Enterprise-fürt automatikus üzembe helyezésén, amely egy aszinkron vész-helyreállítási (DR) hellyel rendelkezik két Azure Stack hub-környezetben. Ha többet szeretne megtudni a SQL Server 2016 és a magas rendelkezésre állásról, tekintse meg az [Always On rendelkezésre állási csoportok: magas rendelkezésre állású és vész-helyreállítási megoldást](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
+Ez a cikk végigvezeti egy olyan alapszintű magas rendelkezésre állású (HA) SQL Server 2016 Enterprise-fürt automatikus üzembe helyezésén, amely egy aszinkron vész-helyreállítási (DR) hellyel rendelkezik két Azure Stack hub-környezetben. Ha többet szeretne megtudni a SQL Server 2016 és a magas rendelkezésre állásról, tekintse meg az [Always On rendelkezésre állási csoportok: magas rendelkezésre állású és vész-helyreállítási megoldást](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
 Ebben a megoldásban egy példaként szolgáló környezetet fog kiépíteni a következőkre:
 
@@ -40,9 +40,9 @@ Ebben a megoldásban egy példaként szolgáló környezetet fog kiépíteni a k
 - Két csatlakoztatott Azure Stack hub integrált rendszer (Azure Stack hub). Ez a központi telepítés nem működik a Azure Stack Development Kiton (ASDK). Ha többet szeretne megtudni az Azure Stack hub-ról, tekintse meg a [Azure stack áttekintését](https://azure.microsoft.com/overview/azure-stack/).
 - Bérlői előfizetés az egyes Azure Stack hubokon.
   - **Jegyezze fel minden egyes Azure Stack hub előfizetési AZONOSÍTÓját és Azure Resource Manager végpontját.**
-- Egy Azure Active Directory (Azure AD) egyszerű szolgáltatásnév, amely jogosult a bérlői előfizetésre az egyes Azure Stack hubokon. Előfordulhat, hogy két egyszerű szolgáltatást kell létrehoznia, ha az Azure Stack hubok különböző Azure AD-bérlők között vannak telepítve. Ha meg szeretné tudni, hogyan hozhat létre egyszerű szolgáltatásnevet Azure Stack hubhoz, tekintse meg az [egyszerű szolgáltatás létrehozása az alkalmazások Azure stack hub-erőforrásokhoz való hozzáférésének biztosítása érdekében](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)című témakört.
+- Egy Azure Active Directory (Azure AD) egyszerű szolgáltatásnév, amely jogosult a bérlői előfizetésre az egyes Azure Stack hubokon. Előfordulhat, hogy két egyszerű szolgáltatást kell létrehoznia, ha az Azure Stack hubok különböző Azure AD-bérlők között vannak telepítve. Ha meg szeretné tudni, hogyan hozhat létre egyszerű szolgáltatásnevet Azure Stack hubhoz, tekintse meg az [egyszerű szolgáltatás létrehozása az alkalmazások Azure stack hub-erőforrásokhoz való hozzáférésének biztosítása érdekében](/azure-stack/user/azure-stack-create-service-principals)című témakört.
   - **Jegyezze fel az egyes egyszerű szolgáltatások alkalmazás-AZONOSÍTÓját, az ügyfél titkos kulcsát és a bérlő nevét (xxxxx.onmicrosoft.com).**
-- SQL Server 2016 Enterprise konzorciális az egyes Azure Stack hub-piactéren. További információ a Marketplace Syndication szolgáltatásról: [Marketplace-elemek letöltése Azure stack hubhoz](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- SQL Server 2016 Enterprise konzorciális az egyes Azure Stack hub-piactéren. További információ a Marketplace Syndication szolgáltatásról: [Marketplace-elemek letöltése Azure stack hubhoz](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
     **Győződjön meg arról, hogy a szervezet rendelkezik a megfelelő SQL-licenccel.**
 - A helyi gépre telepített [Windows Docker](https://docs.docker.com/docker-for-windows/) .
 
@@ -103,8 +103,8 @@ Az egyes központi telepítésekhez tartozó Docker-rendszerképek megszüntetik
 
     ![SQL Server 2016 SQL HA](media/solution-deployment-guide-sql-ha/image2.png)
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-- SQL Server Management Studio használatával manuálisan hajthatja végre a feladatátvételt a fürtön. Lásd: az [Always On rendelkezésre állási csoport kényszerített manuális feladatátvételének végrehajtása (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
+- SQL Server Management Studio használatával manuálisan hajthatja végre a feladatátvételt a fürtön. Lásd: az [Always On rendelkezésre állási csoport kényszerített manuális feladatátvételének végrehajtása (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - További információ a hibrid felhőalapú alkalmazásokról. Tekintse meg a [hibrid felhőalapú megoldásokat.](https://aka.ms/azsdevtutorials)
 - Használja saját adatait, vagy módosítsa a kódot erre a mintára a [githubon](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

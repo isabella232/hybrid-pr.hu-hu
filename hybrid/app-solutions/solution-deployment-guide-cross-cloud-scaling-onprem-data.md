@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75289eae902c5363862e345bdedb97cbcee0476e
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910892"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477320"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Hibrid alkalmazás üzembe helyezése a felhőn átívelő helyszíni adatszolgáltatásokkal
 
@@ -113,7 +113,7 @@ A megoldás elindítása előtt győződjön meg arról, hogy megfelel a követk
      > [!Note]  
      > Az SQL-hitelesítés engedélyezésekor a rendszer automatikusan feltölti az **alapokban**konfigurált "SQLAdmin" információkkal.
 
-   - A többi beállításnál tartsa meg az alapértelmezett értékeket. Válassza az **OK** lehetőséget.
+   - A többi beállításnál tartsa meg az alapértelmezett értékeket. Kattintson az **OK** gombra.
 
      ![SQL Server beállítások konfigurálása Azure Stack hub felhasználói portálon](media/solution-deployment-guide-hybrid/image5.png)
 
@@ -131,7 +131,7 @@ A Azure App Service leegyszerűsíti a webalkalmazások futtatását és felügy
 
 ### <a name="create-web-apps"></a>Webalkalmazások létrehozása
 
-1. Hozzon létre egy webalkalmazást az Azure-ban a [app Service-csomag kezelése az Azure-ban](https://docs.microsoft.com/azure/app-service/app-service-plan-manage#create-an-app-service-plan)című témakör útmutatásait követve. Győződjön meg arról, hogy a webalkalmazást a hibrid hálózattal megegyező előfizetésben és erőforráscsoporthoz helyezi el.
+1. Hozzon létre egy webalkalmazást az Azure-ban a [app Service-csomag kezelése az Azure-ban](/azure/app-service/app-service-plan-manage#create-an-app-service-plan)című témakör útmutatásait követve. Győződjön meg arról, hogy a webalkalmazást a hibrid hálózattal megegyező előfizetésben és erőforráscsoporthoz helyezi el.
 
 2. Ismételje meg az előző lépést (1) az Azure Stack központban.
 
@@ -172,7 +172,7 @@ A hibrid hálózat Azure oldalán lévő virtuális hálózati átjárónak lehe
 
 ### <a name="integrate-the-azure-app-service-app-with-the-hybrid-network"></a>A Azure App Service alkalmazás integrálása a hibrid hálózattal
 
-1. Az alkalmazás Azure VNet való összekapcsolásához kövesse az [átjáró szükséges VNet-integrációjának](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration)utasításait.
+1. Az alkalmazás Azure VNet való összekapcsolásához kövesse az [átjáró szükséges VNet-integrációjának](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration)utasításait.
 
 2. Lépjen a webalkalmazást üzemeltető App Service-csomag **beállításaihoz** . A **Beállítások**területen válassza a **hálózatkezelés**lehetőséget.
 
@@ -186,7 +186,7 @@ A hibrid hálózat Azure oldalán lévő virtuális hálózati átjárónak lehe
 
     ![Az Virtual Network-integrációban útválasztásra kerülő IP-címtartományok](media/solution-deployment-guide-hybrid/image13.png)
 
-Ha többet szeretne megtudni arról, hogy a App Service hogyan integrálódik az Azure virtuális hálózatok, tekintse meg az [alkalmazás integrálása Azure](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)-beli Virtual Network című témakört.
+Ha többet szeretne megtudni arról, hogy a App Service hogyan integrálódik az Azure virtuális hálózatok, tekintse meg az [alkalmazás integrálása Azure](/azure/app-service/web-sites-integrate-with-vnet)-beli Virtual Network című témakört.
 
 ### <a name="configure-the-azure-stack-hub-virtual-network"></a>Az Azure Stack hub virtuális hálózat konfigurálása
 
@@ -210,7 +210,7 @@ Ez az oktatóanyag a Azure DNS használatával kezeli a DNS-t, mert App Service 
 
 ### <a name="create-subdomains"></a>Altartományok létrehozása
 
-Mivel Traffic Manager DNS-CNAME-re támaszkodik, egy altartományra van szükség ahhoz, hogy megfelelően irányítsa a forgalmat a végpontokra. A DNS-rekordokkal és a tartomány-hozzárendeléssel kapcsolatos további információkért lásd: [tartományok leképezése Traffic Managerokkal](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager-custom-domain-name).
+Mivel Traffic Manager DNS-CNAME-re támaszkodik, egy altartományra van szükség ahhoz, hogy megfelelően irányítsa a forgalmat a végpontokra. A DNS-rekordokkal és a tartomány-hozzárendeléssel kapcsolatos további információkért lásd: [tartományok leképezése Traffic Managerokkal](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
 Az Azure-végponthoz létre kell hoznia egy altartományt, amelyet a felhasználók használhatnak a webalkalmazás eléréséhez. Ebben az oktatóanyagban használhatja a **app.Northwind.com**-t, de a saját tartománya alapján kell testreszabnia ezt az értéket.
 
@@ -218,13 +218,13 @@ Létre kell hoznia egy altartományt is az Azure Stack hub-végponthoz tartozó 
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Egyéni tartomány konfigurálása az Azure-ban
 
-1. Adja hozzá a **app.Northwind.com** hostname-t az Azure-webalkalmazáshoz [egy CNAME hozzárendelésével Azure app Servicehoz](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
+1. Adja hozzá a **app.Northwind.com** hostname-t az Azure-webalkalmazáshoz [egy CNAME hozzárendelésével Azure app Servicehoz](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
 
 ### <a name="configure-custom-domains-in-azure-stack-hub"></a>Egyéni tartományok konfigurálása Azure Stack központban
 
-1. Adja hozzá a **azurestack.Northwind.com** hostname-t az Azure stack hub webalkalmazáshoz [egy olyan rekord hozzárendelésével, Azure app Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Használja az App Service alkalmazás internetre irányítható IP-címét.
+1. Adja hozzá a **azurestack.Northwind.com** hostname-t az Azure stack hub webalkalmazáshoz [egy olyan rekord hozzárendelésével, Azure app Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Használja az App Service alkalmazás internetre irányítható IP-címét.
 
-2. Adja hozzá a **app.Northwind.com** hostname-t az Azure stack hub webalkalmazáshoz [egy CNAME-fájl Azure app Servicehoz való leképezésével](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Használja az előző lépésben (1) konfigurált állomásnevet a CNAME célhelyként.
+2. Adja hozzá a **app.Northwind.com** hostname-t az Azure stack hub webalkalmazáshoz [egy CNAME-fájl Azure app Servicehoz való leképezésével](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Használja az előző lépésben (1) konfigurált állomásnevet a CNAME célhelyként.
 
 ## <a name="configure-ssl-certificates-for-cross-cloud-scaling"></a>Az SSL-tanúsítványok konfigurálása a Felhőbeli skálázáshoz
 
@@ -238,9 +238,9 @@ SSL hozzáadása az Azure-hoz:
 
 1. Győződjön meg arról, hogy a kapott SSL-tanúsítvány érvényes a létrehozott altartományhoz. (A helyettesítő tanúsítványok használata rendben van.)
 
-2. Az Azure-ban kövesse a **webalkalmazás előkészítése** és az SSL- **tanúsítvány** kötése szakaszát a [meglévő egyéni SSL-tanúsítvány kötése az Azure Web Apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) cikkhez című cikkben található utasításokat. Az **SSL-típusként**válassza a **SNI-alapú SSL** lehetőséget.
+2. Az Azure-ban kövesse a **webalkalmazás előkészítése** és az SSL- **tanúsítvány** kötése szakaszát a [meglévő egyéni SSL-tanúsítvány kötése az Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) cikkhez című cikkben található utasításokat. Az **SSL-típusként**válassza a **SNI-alapú SSL** lehetőséget.
 
-3. A HTTPS-portra irányuló összes forgalom átirányítása. Kövesse a [meglévő egyéni SSL-tanúsítvány kötése az Azure-Web Apps cikk HTTPS-alapú hitelesítésének](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) **megkövetelése** című szakaszának utasításait.
+3. A HTTPS-portra irányuló összes forgalom átirányítása. Kövesse a [meglévő egyéni SSL-tanúsítvány kötése az Azure-Web Apps cikk HTTPS-alapú hitelesítésének](/azure/app-service/app-service-web-tutorial-custom-ssl) **megkövetelése** című szakaszának utasításait.
 
 SSL hozzáadása Azure Stack hubhoz:
 
@@ -248,13 +248,13 @@ SSL hozzáadása Azure Stack hubhoz:
 
 ## <a name="configure-and-deploy-the-web-app"></a>A webalkalmazás konfigurálása és üzembe helyezése
 
-Konfigurálja az telemetria a helyes Application Insights példányra, és konfigurálja a webalkalmazásokat a megfelelő kapcsolati karakterláncokkal. További információ a Application Insightsről: [Mi az Application Insights?](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
+Konfigurálja az telemetria a helyes Application Insights példányra, és konfigurálja a webalkalmazásokat a megfelelő kapcsolati karakterláncokkal. További információ a Application Insightsről: [Mi az Application Insights?](/azure/application-insights/app-insights-overview)
 
 ### <a name="add-application-insights"></a>Application Insights hozzáadása
 
 1. Nyissa meg a webalkalmazást a Microsoft Visual Studióban.
 
-2. [Adja hozzá Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) a projekthez, hogy továbbítsa a telemetria, amelyet a Application Insights használ a riasztások létrehozásához, amikor a webes forgalom növekszik vagy csökken.
+2. [Adja hozzá Application Insights](/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) a projekthez, hogy továbbítsa a telemetria, amelyet a Application Insights használ a riasztások létrehozásához, amikor a webes forgalom növekszik vagy csökken.
 
 ### <a name="configure-dynamic-connection-strings"></a>Dinamikus kapcsolatok karakterláncának konfigurálása
 
@@ -287,7 +287,7 @@ App Service környezeti változók használatával más kapcsolódási karakterl
 
 1. Hozzon létre a kapcsolatok karakterláncait az Azure-hoz és Azure Stack hub-hoz. A karakterláncoknak azonosnak kell lenniük, kivéve a használt IP-címeket.
 
-2. Az Azure-ban és Azure Stack hub-ban adja hozzá a megfelelő kapcsolati karakterláncot [alkalmazás-beállításként](https://docs.microsoft.com/azure/app-service/web-sites-configure) a webalkalmazásban, a `SQLCONNSTR\_` név előtagként használva.
+2. Az Azure-ban és Azure Stack hub-ban adja hozzá a megfelelő kapcsolati karakterláncot [alkalmazás-beállításként](/azure/app-service/web-sites-configure) a webalkalmazásban, a `SQLCONNSTR\_` név előtagként használva.
 
 3. **Mentse** a webalkalmazás beállításait, és indítsa újra az alkalmazást.
 
@@ -335,7 +335,7 @@ Ha App Service környezetben hozza létre a webalkalmazást, az egy példánnyal
 
 3. Állítsa a **lehűlni** a **5-öt**.
 
-4. Válassza a **Hozzáadás** elemet.
+4. Válassza a **Hozzáadás** lehetőséget.
 
 5. Válassza a **+ szabály hozzáadása**elemet.
 
@@ -368,7 +368,7 @@ A forgalom csökkenése esetén az Azure-webalkalmazás automatikusan csökkenth
    - Állítsa a **példányszámot** **1-re**.
    - Állítsa a **lehűlni** a **5-öt**.
 
-2. Válassza a **Hozzáadás** elemet.
+2. Válassza a **Hozzáadás** lehetőséget.
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Traffic Manager profil létrehozása és a Felhőbeli skálázás konfigurálása
 
@@ -398,7 +398,7 @@ Hozzon létre egy Traffic Manager-profilt az Azure-ban, majd konfigurálja a vé
 
 2. **Traffic Manager profilban**a **Beállítások**területen válassza a **végpontok**lehetőséget.
 
-3. Válassza a **Hozzáadás** elemet.
+3. Válassza a **Hozzáadás** lehetőséget.
 
 4. A **végpont hozzáadása**területen használja az Azure stack hub következő beállításait:
 
@@ -543,4 +543,4 @@ Az automatikus forgalmi váltás konfigurálásához kövesse az alábbi lépés
 
 ## <a name="next-steps"></a>További lépések
 
-- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](https://docs.microsoft.com/azure/architecture/patterns).
+- Az Azure Cloud Patterns szolgáltatással kapcsolatos további információkért lásd: [Felhőbeli tervezési minták](/azure/architecture/patterns).

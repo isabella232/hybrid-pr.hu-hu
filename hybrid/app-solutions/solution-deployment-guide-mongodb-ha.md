@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911452"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477269"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Magasan elérhető MongoDB-megoldás üzembe helyezése az Azure-ban és Azure Stack hub
 
@@ -40,9 +40,9 @@ Ebben a megoldásban a következőhöz hozzon létre egy mintavételi környezet
 - Két csatlakoztatott Azure Stack hub integrált rendszer (Azure Stack hub). Ez a központi telepítés nem működik a Azure Stack Development Kiton (ASDK). További információ az Azure Stack hub-ról: [Mi az Azure stack hub?](https://azure.microsoft.com/products/azure-stack/hub/)
   - Bérlői előfizetés az egyes Azure Stack hubokon. 
   - **Jegyezze fel minden egyes Azure Stack hub előfizetési AZONOSÍTÓját és Azure Resource Manager végpontját.**
-- Egy Azure Active Directory (Azure AD) egyszerű szolgáltatásnév, amely jogosult a bérlői előfizetésre az egyes Azure Stack hubokon. Előfordulhat, hogy két egyszerű szolgáltatást kell létrehoznia, ha az Azure Stack hubok különböző Azure AD-bérlők között vannak telepítve. Ha meg szeretné tudni, hogyan hozhat létre egyszerű szolgáltatásnevet Azure Stack hubhoz, tekintse meg [az alkalmazás-identitás használata Azure stack hub-erőforrások eléréséhez](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)című témakört.
+- Egy Azure Active Directory (Azure AD) egyszerű szolgáltatásnév, amely jogosult a bérlői előfizetésre az egyes Azure Stack hubokon. Előfordulhat, hogy két egyszerű szolgáltatást kell létrehoznia, ha az Azure Stack hubok különböző Azure AD-bérlők között vannak telepítve. Ha meg szeretné tudni, hogyan hozhat létre egyszerű szolgáltatásnevet Azure Stack hubhoz, tekintse meg [az alkalmazás-identitás használata Azure stack hub-erőforrások eléréséhez](/azure-stack/user/azure-stack-create-service-principals)című témakört.
   - **Jegyezze fel az egyes egyszerű szolgáltatások alkalmazás-AZONOSÍTÓját, az ügyfél titkos kulcsát és a bérlő nevét (xxxxx.onmicrosoft.com).**
-- Ubuntu 16,04 szindikált minden Azure Stack hub piactéren. További információ a Marketplace Syndication szolgáltatásról: [Marketplace-elemek letöltése Azure stack hubhoz](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- Ubuntu 16,04 szindikált minden Azure Stack hub piactéren. További információ a Marketplace Syndication szolgáltatásról: [Marketplace-elemek letöltése Azure stack hubhoz](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
 - A helyi gépre telepített [Windows Docker](https://docs.docker.com/docker-for-windows/) .
 
 ## <a name="get-the-docker-image"></a>A Docker-rendszerkép beszerzése
@@ -102,7 +102,7 @@ Az egyes központi telepítésekhez tartozó Docker-rendszerképek megszüntetik
   exit
   ```
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 - Ha a DR Azure Stack hubhoz engedélyezte a Jump Box virtuális gépet, akkor SSH-n keresztül kapcsolódhat, és a Mongo parancssori felületének telepítésével használhatja a MongoDB-fürtöt. Ha többet szeretne megtudni a MongoDB-mel való interakcióról, tekintse meg [a Mongo-rendszerhéjat](https://docs.mongodb.com/manual/mongo/).
 - A hibrid felhőalapú alkalmazásokkal kapcsolatos további információkért lásd: [hibrid felhőalapú megoldások.](https://aka.ms/azsdevtutorials)

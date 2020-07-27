@@ -10,17 +10,20 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: 9793f34db13e324de65b719613c0f4dbf4bdf127
-  ms.sourcegitcommit: 8d75007af6ad574e0629208464bbadb97a5c438e
+  ms.openlocfilehash: 5e47f05293640339329914a3183fae51649ded4c
+  ms.sourcegitcommit: ad41cc782094d57b506a3a1d98209f6cf94f0f3b
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86949661"
+  ms.lasthandoff: 07/24/2020
+  ms.locfileid: "87121807"
 highlightedContent:
   items:
   - title: Ismerkedés az új Azure Stack HCI-vel
     itemType: video
     url: https://azure.microsoft.com/resources/videos/discover-the-new-azure-stack-hci/
+  - title: 'Inspire 2020: Az Azure Stack HCI újdonságai'
+    itemType: video
+    url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
   - title: Azure Hybrid Virtual Event
     itemType: video
     url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
@@ -65,7 +68,7 @@ conceptualContent:
   title: Hibridkompatibilis technológiák
   summary: Szolgáltatások és termékek hibrid megoldások létrehozásához és üzemeltetéséhez.
   items:
-  - title: Mesterséges intelligencia és gépi tanulás
+  - title: AI + Machine Learning
     links:
     - url: /azure/bot-service
       itemType: overview
@@ -79,7 +82,7 @@ conceptualContent:
     - url: /azure/machine-learning/
       itemType: overview
       text: Azure Machine Learning
-  - title: Tárolók
+  - title: Containers
     links:
     - url: /azure/azure-arc/kubernetes/
       itemType: overview
@@ -176,7 +179,7 @@ conceptualContent:
     - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
       itemType: overview
       text: Hibrid Azure AD-csatlakoztatott eszközök
-  - title: Felügyelet
+  - title: Kezelés
     links:
     - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
       itemType: overview
@@ -205,7 +208,7 @@ conceptualContent:
     - url: /windows-server/manage/windows-admin-center/azure/
       itemType: overview
       text: A Windows Admin Center hibrid Azure-szolgáltatásai
-  - title: Hálózatkezelés
+  - title: Hálózat
     links:
     - url: /azure/networking/edge-zones-overview
       itemType: overview
@@ -231,7 +234,7 @@ conceptualContent:
     - url: /azure/vpn-gateway/
       itemType: overview
       text: Azure VPN Gateway
-  - title: Tárolás
+  - title: Storage
     links:
     - url: /azure/avere-vfxt/avere-vfxt-overview
       itemType: overview
@@ -258,7 +261,7 @@ additionalContent:
         text: Mik azok a minták és megoldáspéldák?
       - url: ./app-solutions/overview-app-design-considerations.md
         text: A hibrid alkalmazáskialakítás szempontjai
-    - title: Ismerkedés a hibrid mintákkal
+    - title: Ismerkedés a hibrid alkalmazásmintákkal
       links:
       - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: Több felhőre kiterjedő méretezés
@@ -268,7 +271,7 @@ additionalContent:
         text: Forgalomszámlálás (kiskereskedelem)
       - url: ./app-solutions/pattern-geo-distributed.md
         text: Földrajzilag elosztott alkalmazás
-    - title: Hibrid megoldáspéldák üzembe helyezése
+    - title: Hibrid alkalmazások megoldáspéldáinak üzembe helyezése
       links:
       - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: Több felhőre kiterjedő méretezés
@@ -298,6 +301,8 @@ additionalContent:
         text: .NET-fejlesztés Azure-hoz
       - url: https://github.com/likamrat/azure_arc
         text: Azure Arc – gyors útmutatók
+      - url: https://github.com/Azure/AzureStackHCI-EvalGuide
+        text: Útmutató az Azure Stack HCI próbaverziójához
       - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
         text: Tanúsítvány az Azure IoT Edge-eszközökkel való használathoz
       - url: /samples/browse/

@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: 5e47f05293640339329914a3183fae51649ded4c
-  ms.sourcegitcommit: ad41cc782094d57b506a3a1d98209f6cf94f0f3b
+  ms.openlocfilehash: ab8146340f284af226f336af8fddd2a30977869d
+  ms.sourcegitcommit: 2efdd6422c2af773ad7890dcbc546e816e501c0e
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 07/24/2020
-  ms.locfileid: "87121807"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87264097"
 highlightedContent:
   items:
   - title: Ismerkedés az új Azure Stack HCI-vel
@@ -82,7 +82,7 @@ conceptualContent:
     - url: /azure/machine-learning/
       itemType: overview
       text: Azure Machine Learning
-  - title: Containers
+  - title: Tárolók
     links:
     - url: /azure/azure-arc/kubernetes/
       itemType: overview
@@ -238,7 +238,7 @@ conceptualContent:
     links:
     - url: /azure/avere-vfxt/avere-vfxt-overview
       itemType: overview
-      text: Avere vFXT for Azure
+      text: Azure-hoz készült Avere vFXT
     - url: /azure/backup/
       itemType: overview
       text: Azure Backup
@@ -286,9 +286,11 @@ additionalContent:
     - title: Általános források
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
-        text: A globális Azure és az Azure Stack
+        text: Az Azure globális felhő és az Azure Stack
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Az Azure hibrid képességei
+      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
+        text: A hibrid Azure Stack-alkalmazások bemutatása
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Ügyfelek történetei a hibrid felhőről
       - url: /learn

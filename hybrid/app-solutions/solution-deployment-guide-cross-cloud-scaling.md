@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477337"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886815"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Felhőben futó alkalmazások üzembe helyezése az Azure-ban és Azure Stack hub használatával
 
@@ -40,7 +40,7 @@ Ebben a megoldásban egy példaként szolgáló környezetet fog kiépíteni a k
 - Egy Azure-előfizetés. Ha szükséges, hozzon létre egy [ingyenes fiókot](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) a Kezdés előtt.
 - Azure Stack hub integrált rendszer vagy Azure Stack Development Kit (ASDK) üzembe helyezése.
   - Az Azure Stack hub telepítésére vonatkozó utasításokért lásd: [a ASDK telepítése](/azure-stack/asdk/asdk-install.md).
-  - Az üzembe helyezés utáni automatizálási szkriptek ASDK válassza a következőt:[https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
+  - Az üzembe helyezés utáni automatizálási szkriptek ASDK válassza a következőt: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Előfordulhat, hogy a telepítés elvégzéséhez néhány óra szükséges.
 - [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) Péter-szolgáltatások üzembe helyezése Azure stack hubhoz.
 - [Hozzon létre terveket/ajánlatokat](/azure-stack/operator/service-plan-offer-subscription-overview.md) a Azure stack hub-környezetben.
@@ -52,7 +52,7 @@ Ebben a megoldásban egy példaként szolgáló környezetet fog kiépíteni a k
 
 ## <a name="issues-and-considerations"></a>Problémák és megfontolandó szempontok
 
-### <a name="scalability"></a>Skálázhatóság
+### <a name="scalability"></a>Méretezhetőség
 
 A többfelhős méretezés kulcsfontosságú összetevője az, hogy a nyilvános és a helyszíni felhőalapú infrastruktúra között azonnali és igény szerinti skálázást lehessen biztosítani, amely konzisztens és megbízható szolgáltatást biztosít.
 
@@ -68,7 +68,7 @@ A többfelhős megoldás zökkenőmentes felügyeletet és ismerős felületet b
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Egyéni tartomány beszerzése és a DNS konfigurálása
 
-Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Office 365/External DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)adja hozzá.
+Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Microsoft 365/külső DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider)adja hozzá.
 
 1. Egyéni tartomány regisztrálása nyilvános regisztrálóval.
 2. Jelentkezzen be a tartomány tartománynév-regisztrálójába. A DNS-frissítések elvégzéséhez egy jóváhagyott rendszergazdára lehet szükség.

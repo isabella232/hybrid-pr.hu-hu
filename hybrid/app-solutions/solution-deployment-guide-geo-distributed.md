@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477354"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886832"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Közvetlen forgalom egy földrajzilag elosztott alkalmazással az Azure és a Azure Stack hub használatával
 
@@ -84,7 +84,7 @@ Azure-előfizetésre és Azure Stack hub telepítésre van szükség.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Egyéni tartomány beszerzése és a DNS konfigurálása
 
-Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ekkor ellenőrizheti az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Office 365/External DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)adja hozzá.
+Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ekkor ellenőrizheti az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Microsoft 365/külső DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider)adja hozzá.
 
 1. Egyéni tartomány regisztrálása nyilvános regisztrálóval.
 
@@ -256,7 +256,7 @@ A megoldás elvégzéséhez:
 
 - Adjon meg egy tartománynevet, és győződjön meg arról, hogy a tartományi szolgáltató DNS-beállításjegyzéke elérhető.
 
-Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Office 365/External DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)adja hozzá.
+Frissítse a tartományhoz tartozó DNS-zónafájl fájlját. Az Azure AD ellenőrzi az Egyéni tartománynév tulajdonjogát. Az Azure-ban az Azure/Microsoft 365/külső DNS-rekordok [Azure DNS](/azure/dns/dns-getstarted-portal) használhatók, vagy a DNS-bejegyzést [egy másik DNS-regisztrálónál](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider)adja hozzá.
 
 - Egyéni tartomány regisztrálása nyilvános regisztrálóval.
 
@@ -577,7 +577,7 @@ Az alkalmazás alapértelmezés szerint engedélyezi a [TLS](https://wikipedia.o
 
 2. **Traffic Manager profilban**a **Beállítások** szakaszban válassza a **végpontok**lehetőséget.
 
-3. Válassza a **Hozzáadás** lehetőséget.
+3. Válassza a **Hozzáadás** elemet.
 
 4. Az Azure Stack hub-végpont hozzáadása.
 
@@ -593,7 +593,7 @@ Az alkalmazás alapértelmezés szerint engedélyezi a [TLS](https://wikipedia.o
 
 10. A **Beállítás letiltottként** jelölőnégyzetet ne jelölje ki.
 
-11. Kattintson az **OK** gombra.
+11. Válassza az **OK** lehetőséget.
 
 12. Az Azure-végpont hozzáadása:
 
@@ -611,7 +611,7 @@ Az alkalmazás alapértelmezés szerint engedélyezi a [TLS](https://wikipedia.o
 
 15. A **Beállítás letiltottként** jelölőnégyzetet ne jelölje ki.
 
-16. Kattintson az **OK** gombra.
+16. Válassza az **OK** lehetőséget.
 
     > [!Note]  
     >  Hozzon létre legalább egy olyan végpontot, amelynek földrajzi hatóköre az összes (világ), hogy az erőforrás alapértelmezett végpontja legyen.

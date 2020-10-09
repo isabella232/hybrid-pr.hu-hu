@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477082"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852473"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>SQL Server 2016 rendelkezésre állási csoport üzembe helyezése az Azure-ban és Azure Stack hub-ban
 
@@ -106,5 +106,5 @@ Az egyes központi telepítésekhez tartozó Docker-rendszerképek megszüntetik
 ## <a name="next-steps"></a>További lépések
 
 - SQL Server Management Studio használatával manuálisan hajthatja végre a feladatátvételt a fürtön. Lásd: az [Always On rendelkezésre állási csoport kényszerített manuális feladatátvételének végrehajtása (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
-- További információ a hibrid felhőalapú alkalmazásokról. Tekintse meg a [hibrid felhőalapú megoldásokat.](https://aka.ms/azsdevtutorials)
+- További információ a hibrid felhőalapú alkalmazásokról. Tekintse meg a [hibrid felhőalapú megoldásokat.](/azure-stack/user/)
 - Használja saját adatait, vagy módosítsa a kódot erre a mintára a [githubon](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

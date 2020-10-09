@@ -7,12 +7,12 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 8b975c7b99807490d446f557e84b6e0eabf34649
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477218"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852490"
 ---
 # <a name="hybrid-app-design-considerations"></a>A hibrid alkalmazáskialakítás szempontjai
 
@@ -69,7 +69,7 @@ Minden egyes összetevő esetében értékelje ki az egyes oszlopok jellemzőit.
 | **Pillér** | **Leírás** |
 | ----------- | --------------------------------------------------------- |
 | Elhelyezés  | Az összetevők stratégiai elhelyezése a hibrid alkalmazásokban. |
-| Skálázhatóság  | A rendszer megnövekedett terhelés kezelésére vonatkozó képessége. |
+| Méretezhetőség  | A rendszer megnövekedett terhelés kezelésére vonatkozó képessége. |
 | Rendelkezésre állás  | A hibrid alkalmazások működésének és működésének aránya. |
 | Rugalmasság | A hibrid alkalmazások helyreállításának lehetősége. |
 | Kezelhetőség | A rendszert termelési állapotban tartó működési folyamatok. |
@@ -105,7 +105,7 @@ Az elhelyezés a helymeghatározási összetevők fontos feladata, hogy a lehet�
 
 **A forgalmi folyamatok szabályozása.** Kezelje a csúcsérték-használatot, valamint a személyes azonosításra alkalmas adatokra vonatkozó megfelelő és biztonságos kommunikációt, ha az előtér egy nyilvános felhőben érhető el.
 
-## <a name="scalability"></a>Skálázhatóság
+## <a name="scalability"></a>Méretezhetőség
 
 A méretezhetőség a rendszer azon képessége, hogy az alkalmazás megnövekedett terhelését kezelje, ami az idő múlásával változhat, ahogy más tényezők és erők a célközönség méretét, valamint az alkalmazás méretét és hatókörét is érintik.
 
@@ -231,4 +231,4 @@ További információkat találhat az alábbi forrásokban:
 
 - [Hibrid felhő](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Hibrid felhőalapú alkalmazások](https://azure.microsoft.com/solutions/hybrid-cloud-app/)
-- [Azure Resource Manager-sablonok fejlesztése felhőkonzisztenciához](https://aka.ms/consistency)
+- [Azure Resource Manager-sablonok fejlesztése felhőkonzisztenciához](/azure/azure-resource-manager/templates/templates-cloud-consistency)

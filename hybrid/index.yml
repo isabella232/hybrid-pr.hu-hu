@@ -10,14 +10,17 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 09/02/2020
-  ms.openlocfilehash: fe346e09aba6e073f291037eb767a3936dea3a99
-  ms.sourcegitcommit: 1c9d681b45f3cc91fd6896badf998be68e284a35
+  ms.openlocfilehash: 66e51bad731b1235937d7cfa341153809307e151
+  ms.sourcegitcommit: 5631ed6b17942bf893e2dbad07d4aba274de8262
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 09/28/2020
-  ms.locfileid: "91407718"
+  ms.lasthandoff: 10/21/2020
+  ms.locfileid: "92334238"
 highlightedContent:
   items:
+  - title: Az Azure Modular Datacenter bemutatása
+    itemType: video
+    url: https://azure.microsoft.com/blog/introducing-the-microsoft-azure-modular-datacenter/
   - title: 'Ignite 2020: hibrid foglalkozások'
     itemType: video
     url: https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=hybrid
@@ -27,9 +30,6 @@ highlightedContent:
   - title: 'Ignite 2020: intelligens peremhálózati foglalkozások'
     itemType: video
     url: https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q="intelligent edge"
-  - title: Ismerkedés az új Azure Stack HCI-vel
-    itemType: video
-    url: https://azure.microsoft.com/resources/videos/discover-the-new-azure-stack-hci/
   - title: 'Inspire 2020: Az Azure Stack HCI újdonságai'
     itemType: video
     url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
@@ -54,9 +54,11 @@ productDirectory:
   - title: Privát felhőplatformok üzemeltetett, helyszíni és mobil adatközpontokhoz.
     imageSrc: media/index/azure-stack-hub.svg
     links:
-    - url: /azure-stack/operator
+    - url: /azure-stack#azure-stack-hub
       text: Azure Stack Hub
-    - url: /azure-stack/hci
+    - url: /azure-stack#azure-stack-hub
+      text: Azure Modular Data Center
+    - url: /azure-stack#azure-stack-hci
       text: Azure Stack HCI
   - title: Intelligens peremhálózati platformok eszközökhöz.
     imageSrc: media/index/intelligent.svg
@@ -85,7 +87,7 @@ conceptualContent:
     - url: /azure/machine-learning/
       itemType: overview
       text: Azure Machine Learning
-  - title: Tárolók
+  - title: Containers
     links:
     - url: /azure/azure-arc/kubernetes/
       itemType: overview
@@ -217,7 +219,7 @@ conceptualContent:
     - url: /windows-server/manage/windows-admin-center/azure/
       itemType: overview
       text: A Windows Admin Center hibrid Azure-szolgáltatásai
-  - title: Hálózat
+  - title: Hálózatkezelés
     links:
     - url: /azure/networking/edge-zones-overview
       itemType: overview
@@ -246,7 +248,7 @@ conceptualContent:
     - url: /azure/vpn-gateway/
       itemType: overview
       text: Azure VPN Gateway
-  - title: Storage
+  - title: Tárolás
     links:
     - url: /azure/avere-vfxt/avere-vfxt-overview
       itemType: overview

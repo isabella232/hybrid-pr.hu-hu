@@ -1,8 +1,8 @@
-- name: A hibrid Azure dokumentációja
+- name: Hibrid és többfelhős megoldások dokumentációja
   href: index.yml
 - name: Áttekintés
   items:
-    - name: Hibrid minták és megoldáspéldák
+    - name: Minták és megoldáspéldák
       href: overview-patterns-solution-examples.md
 - name: Minták
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Alapelvek
   items:
-    - name: A hibrid alkalmazáskialakítás szempontjai
+    - name: Az alkalmazás kialakítási szempontjai
       href: overview-app-design-considerations.md
 - name: Kapcsolódó témakörök
   items:

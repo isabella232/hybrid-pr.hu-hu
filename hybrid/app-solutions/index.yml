@@ -1,32 +1,32 @@
 ### YamlMime:Landing
-title: Hibrid Azure-minták és -megoldások dokumentációja
-summary: Ismerje meg, hogyan használhatja ki a hibrid mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során. Az Azure és az Azure Stack segítségével hibrid alkalmazások fejleszthetők, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
+title: Hibrid és többfelhős Azure-minták és -megoldások dokumentációja
+summary: Ismerje meg, hogyan használhatja ki a hibrid és többfelhős mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
 metadata:
-  title: Hibrid Azure-minták és -megoldások dokumentációja
-  description: Ismerje meg, hogyan használhatja ki a hibrid mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során. Az Azure és az Azure Stack segítségével hibrid alkalmazások fejleszthetők, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
+  title: Hibrid és többfelhős Azure-minták és -megoldások dokumentációja
+  description: Ismerje meg, hogyan használhatja ki a hibrid és többfelhős mintákban és megoldáspéldákban rejlő lehetőségeket az alkalmazásfejlesztés során, amelyek intelligens felhőbeli és intelligens peremhálózati szolgáltatásokra épülnek.
   ms.service: azure-stack
   ms.topic: landing-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
-  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84909717"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94872978"
 landingContent:
-- title: A hibrid minták és megoldások ismertetése
+- title: A hibrid és többfelhős minták és megoldások ismertetése
   linkLists:
   - linkListType: overview
     links:
-    - text: Mik azok a hibrid minták és megoldáspéldák?
+    - text: Mik azok a minták és megoldáspéldák?
       url: overview-patterns-solution-examples.md
   - linkListType: concept
     links:
-    - text: A hibrid alkalmazáskialakítás szempontjai
+    - text: Az alkalmazás kialakítási szempontjai
       url: overview-app-design-considerations.md
-- title: Ismerkedés a hibrid mintákkal
+- title: Ismerkedés a hibrid és többfelhős mintákkal
   linkLists:
   - linkListType: architecture
     links:
@@ -38,7 +38,7 @@ landingContent:
       url: pattern-retail-footfall-detection.md
     - text: Földrajzilag elosztott alkalmazás
       url: pattern-geo-distributed.md
-- title: Hibrid megoldáspéldák üzembe helyezése
+- title: Hibrid és többfelhős megoldáspéldák üzembe helyezése
   linkLists:
   - linkListType: tutorial
     links:

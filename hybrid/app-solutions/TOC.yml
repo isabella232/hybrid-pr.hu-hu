@@ -26,6 +26,8 @@
           href: pattern-cross-cloud-scale-onprem-data.md
         - name: Forgalomszámlálás (kiskereskedelem)
           href: pattern-retail-footfall-detection.md
+        - name: Magas rendelkezésre állású Kubernetes-fürt
+          href: pattern-highly-available-kubernetes.md
         - name: Készlethiány-észlelés a peremhálózaton
           href: pattern-out-of-stock-at-edge.md
 - name: Megoldás-üzembehelyezési útmutatók
@@ -40,6 +42,8 @@
       href: solution-deployment-guide-retail-footfall-detection.md
     - name: Földrajzilag elosztott alkalmazás
       href: solution-deployment-guide-geo-distributed.md
+    - name: Magas rendelkezésre állású Kubernetes-fürt
+      href: solution-deployment-guide-highly-available-kubernetes.md
     - name: Hibrid kapcsolat
       href: solution-deployment-guide-connectivity.md
     - name: Hibrid identitás

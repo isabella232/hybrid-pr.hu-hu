@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 0f857515a44ece7f967ade3dee8f493481709851
+ms.sourcegitcommit: c890f2c5e5e5f9f93c921f02dd1a6ca5026d5289
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852473"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091802"
 ---
-# <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>SQL Server 2016 rendelkezésre állási csoport üzembe helyezése az Azure-ban és Azure Stack hub-ban
+# <a name="deploy-a-sql-server-2016-availability-group-across-two-azure-stack-hub-environments"></a>SQL Server 2016 rendelkezésre állási csoport üzembe helyezése két Azure Stack hub-környezetben
 
 Ez a cikk végigvezeti egy olyan alapszintű magas rendelkezésre állású (HA) SQL Server 2016 Enterprise-fürt automatikus üzembe helyezésén, amely egy aszinkron vész-helyreállítási (DR) hellyel rendelkezik két Azure Stack hub-környezetben. Ha többet szeretne megtudni a SQL Server 2016 és a magas rendelkezésre állásról, tekintse meg az [Always On rendelkezésre állási csoportok: magas rendelkezésre állású és vész-helyreállítási megoldást](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
@@ -103,7 +103,7 @@ Az egyes központi telepítésekhez tartozó Docker-rendszerképek megszüntetik
 
     ![SQL Server 2016 SQL HA](media/solution-deployment-guide-sql-ha/image2.png)
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 - SQL Server Management Studio használatával manuálisan hajthatja végre a feladatátvételt a fürtön. Lásd: az [Always On rendelkezésre állási csoport kényszerített manuális feladatátvételének végrehajtása (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - További információ a hibrid felhőalapú alkalmazásokról. Tekintse meg a [hibrid felhőalapú megoldásokat.](/azure-stack/user/)

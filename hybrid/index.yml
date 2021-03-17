@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
-  ms.openlocfilehash: 218f52c27dee54dd4265a9c1eebc6de330bd6154
-  ms.sourcegitcommit: a5851a7351c39249a58da8d0cf121bbf0b306dca
+  ms.openlocfilehash: 59508b4cce80dd3a18a3e36feef6690290e26168
+  ms.sourcegitcommit: 25bfa6f85c1295ecbaf24e812ccebf1b7220bef8
   ms.translationtype: MT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102606193"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103600658"
 highlightedContent:
   items:
   - title: 'Ignite 2021: hibrid munkamenetek'
@@ -229,7 +229,7 @@ conceptualContent:
     - url: /windows-server/manage/windows-admin-center/azure/
       itemType: overview
       text: A Windows Admin Center hibrid Azure-szolgáltatásai
-  - title: Hálózat
+  - title: Hálózatkezelés
     links:
     - url: /azure/networking/edge-zones-overview
       itemType: overview
@@ -336,12 +336,16 @@ additionalContent:
       links:
       - url: /learn/modules/align-requirements-in-azure/
         text: Követelmények igazítása a felhőtípusokhoz és a szolgáltatásmodellekhez az Azure-ban
+      - url: /azure/architecture/browse/?azure_categories=hybrid
+        text: Hibrid Azure-architektúrák
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Az Azure hibrid képességei
       - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
         text: Azure Hybrid Virtual Event
+      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+        text: Cloud bevezetési keretrendszer – hibrid és többfelhős forgatókönyv
       - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: A hibrid Azure-felhő bemutatása
+        text: A hibrid Azure-felhő szolgáltatásainak bemutatása
       - url: https://events.microsoft.com/
         text: Microsoft Events Catalog
       - url: /learn
@@ -350,6 +354,10 @@ additionalContent:
       links:
       - url: /learn/modules/azure-sentinel-deploy-configure/
         text: Az Azure Sentinel üzembe helyezése és adatforrásokhoz csatlakoztatása
+      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+        text: Hibrid szolgáltatások biztonságos közzététele az Azure Relay segítségével
+      - url: /learn/modules/implement-manage-hybrid-identity/
+        text: Hibrid identitás implementálása és kezelése
       - url: /learn/modules/implement-hybrid-identity-windows-server/
         text: Hibrid identitás implementálása a Windows Server használatával
       - url: /learn/modules/intro-to-azure-sentinel/
@@ -358,16 +366,18 @@ additionalContent:
         text: Windows Server-alapú hibrid felhő – felügyelet, monitorozás és biztonság
     - title: Kezelés
       links:
-      - url: https://github.com/likamrat/azure_arc
+      - url: https://azurearcjumpstart.io/
         text: Azure Arc – gyors útmutatók
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: Magas rendelkezésre állás és vészhelyreállítási stratégiák
-      - url: /learn/modules/explore-iaas-paas-platform-tools-for-high-availability-disaster-recovery/
-        text: IaaS- és PaaS-platformeszközök a magas rendelkezésre állás és a vészhelyreállítás biztosításához
+      - url: /learn/browse/?terms=%22%20Arc%20%22
+        text: Azure arc learning-modulok
+      - url: /describe-high-availability-disaster-recovery-strategies/
+        text: A magas rendelkezésre állás és a vész-helyreállítási stratégiák leírása
+      - url: /learn/browse/?terms="disaster%20recovery"
+        text: Vész-helyreállítási modulok
+      - url: /learn/browse/?terms="high%20availability"
+        text: Magas rendelkezésre állású Learn modulok
       - url: /learn/modules/intro-to-azure-arc/
         text: Az Azure Arc bemutatása
-      - url: /learn/modules/manage-hybrid-workloads-azure-arc/
-        text: Hibrid számítási feladatok kezelése az Azure Arc használatával
       - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
         text: Windows Server-alapú IaaS virtuális gépek és hibrid példányok monitorozása
       - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
@@ -388,20 +398,6 @@ additionalContent:
         text: Hibrid biztonsági mentés és helyreállítás implementálása a Windows Server IaaS használatával
   - title: További források
     items:
-    - title: Fejlesztő
-      links:
-      - url: /azure/developer/
-        text: Azure fejlesztői dokumentumok és eszközök
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Hibrid Azure-architektúrák
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Azure IoT-eszközök a Visual Studio Code-hoz
-      - url: /samples/browse/
-        text: Kódmintaböngésző
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI fejlesztői készlet
-      - url: /visualstudio/azure/
-        text: Azure-fejlesztés a Visual Studióban
     - title: Általános kérdések
       links:
       - url: https://azure.microsoft.com/blog/topics/hybrid/
@@ -412,7 +408,7 @@ additionalContent:
         text: Azure Stack Hub-ügyfélmegoldások
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Ügyfelek történetei a hibrid felhőről
-    - title: Súgó + támogatás
+    - title: Támogatás
       links:
       - url: https://azure.microsoft.com/support/options/
         text: Azure-támogatás
@@ -422,3 +418,15 @@ additionalContent:
         text: Microsoft Q&A-fórumok
       - url: https://stackoverflow.com/
         text: Stack Overflow
+    - title: Műszaki
+      links:
+      - url: /azure/developer/
+        text: Azure fejlesztői dokumentumok és eszközök
+      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+        text: Azure IoT-eszközök a Visual Studio Code-hoz
+      - url: /samples/browse/
+        text: Kódmintaböngésző
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Vision AI fejlesztői készlet
+      - url: /visualstudio/azure/
+        text: Azure-fejlesztés a Visual Studióban

@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911228"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895329"
 ---
 # <a name="footfall-detection-pattern"></a>Lépés hangja észlelési minta
 
@@ -44,14 +44,14 @@ Ez a kiskereskedelmi elemzési minta egy lépcsőzetes megközelítést használ
 
 Ez a megoldás a következő összetevőket használja:
 
-| Réteg | Összetevő | Description |
+| Réteg | Összetevő | Leírás |
 |----------|-----------|-------------|
 | Tárolt hardver | [Custom Vision AI fejlesztői csomag](https://azure.github.io/Vision-AI-DevKit-Pages/) | Egy helyi ML-modell használatával biztosítja az áruházbeli szűrést, amely csak az elemzésre alkalmas személyek képét rögzíti. Biztonságos kiépítés és frissítés IoT Hubon keresztül.<br><br>|
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Az Azure Event Hubs méretezhető platformot biztosít a Azure Stream Analyticshoz szépen integrálható, névtelenül tárolt adatmennyiségek betöltéséhez. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Az Azure Stream Analytics-feladatok összesítik a névtelen adatokat, és a vizualizációk 15 másodperces Windowsba csoportosítják azokat. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | A Power BI egy könnyen használható irányítópult-felületet biztosít a Azure Stream Analytics kimenetének megtekintéséhez. |
-| Azure Stack hub | [APP SERVICE](/azure-stack/operator/azure-stack-app-service-overview.md) | A App Service erőforrás-szolgáltató (RP) egy alapot biztosít a peremhálózati összetevők számára, beleértve a Web Apps/API-k és függvények üzemeltetési és felügyeleti funkcióit. |
-| | Azure Kubernetes szolgáltatás [(ak) motorjának](https://github.com/Azure/aks-engine) fürtje | Az Azure Stack hub-ba üzembe helyezett, AK-t tartalmazó AK RP egy méretezhető, rugalmas motort biztosít az Face API tároló futtatásához. |
+| Azure Stack Hub | [APP SERVICE](/azure-stack/operator/azure-stack-app-service-overview) | A App Service erőforrás-szolgáltató (RP) egy alapot biztosít a peremhálózati összetevők számára, beleértve a Web Apps/API-k és függvények üzemeltetési és felügyeleti funkcióit. |
+| | Azure Kubernetes szolgáltatás [(ak) motorjának](https://github.com/Azure/aks-engine) fürtje | A Azure Stack hub-ba telepített AKS-Engine-fürttel rendelkező AK RP méretezhető, rugalmas motort biztosít az Face API tároló futtatásához. |
 | | Azure Cognitive Services [Face API tárolók](/azure/cognitive-services/face/face-how-to-install-containers)| Az Azure Cognitive Services RP Face API tárolókkal biztosítja a demográfiai, érzelem-és egyedi látogatói észlelést a contoso magánhálózaton. |
 | | Blob Storage | Az AI fejlesztői csomagból rögzített rendszerképek fel lesznek töltve az Azure Stack hub blob Storage-tárolóba. |
 | | Azure Functions | Azure Stack hub-on futó Azure-függvény fogadja a blob Storage-ból érkező adatokat, és kezeli az interakciókat a Face API. A rendszer az Azure-ban található Event Hubs-fürtre küldi el a névtelenül való adatgyűjtést.<br><br>|

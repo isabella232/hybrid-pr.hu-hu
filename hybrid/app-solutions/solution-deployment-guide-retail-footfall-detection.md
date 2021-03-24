@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901490"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895364"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>AI-alapú lépés hangja-észlelési megoldás üzembe helyezése az Azure és Azure Stack hub használatával
 
@@ -37,22 +37,22 @@ Az üzembe helyezési útmutató első lépéseinek megkezdése előtt győződj
 
 - Tekintse át a [lépés hangja-észlelési minta](pattern-retail-footfall-detection.md) témakört.
 - Felhasználói hozzáférés beszerzése egy Azure Stack Development Kit (ASDK) vagy Azure Stack hub integrált rendszerpéldányhoz, a következővel:
-  - A [Azure stack hub erőforrás-szolgáltatón telepített Azure app Service](/azure-stack/operator/azure-stack-app-service-overview.md) . Az Azure Stack hub-példányhoz a kezelőhöz való hozzáférésre van szükség, vagy a telepítéshez a rendszergazdával kell dolgoznia.
+  - A [Azure stack hub erőforrás-szolgáltatón telepített Azure app Service](/azure-stack/operator/azure-stack-app-service-overview) . Az Azure Stack hub-példányhoz a kezelőhöz való hozzáférésre van szükség, vagy a telepítéshez a rendszergazdával kell dolgoznia.
   - App Service-és tárolási kvótát biztosító ajánlat előfizetése. Ajánlat létrehozásához operátori hozzáférésre van szükség.
 - Azure-előfizetéshez való hozzáférés beszerzése.
   - Ha nem rendelkezik Azure-előfizetéssel, regisztráljon az [ingyenes próbaverziós fiókra](https://azure.microsoft.com/free/) , mielőtt megkezdené.
 - Hozzon létre két egyszerű szolgáltatásnevet a címtárban:
   - Egy beállítás az Azure-erőforrásokkal való használatra, az Azure-előfizetések hatókörében való hozzáféréssel.
   - Az egyik beállítása Azure Stack hub-erőforrásokkal való használatra, a Azure Stack hub-előfizetés hatókörében való hozzáféréssel.
-  - Az egyszerű szolgáltatások létrehozásával és a hozzáférés engedélyezésével kapcsolatos további tudnivalókért lásd: [alkalmazás-identitás használata az erőforrásokhoz való hozzáféréshez](/azure-stack/operator/azure-stack-create-service-principals.md). Ha szívesebben szeretné használni az Azure CLI-t, tekintse meg [Az Azure-szolgáltatás létrehozása az Azure CLI-vel](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)című témakört.
+  - Az egyszerű szolgáltatások létrehozásával és a hozzáférés engedélyezésével kapcsolatos további tudnivalókért lásd: [alkalmazás-identitás használata az erőforrásokhoz való hozzáféréshez](/azure-stack/operator/azure-stack-create-service-principals). Ha szívesebben szeretné használni az Azure CLI-t, tekintse meg [Az Azure-szolgáltatás létrehozása az Azure CLI-vel](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)című témakört.
 - Azure Cognitive Services üzembe helyezése az Azure-ban vagy Azure Stack hub-ban.
   - Először is tájékozódjon [Cognitive Servicesról](https://azure.microsoft.com/services/cognitive-services/).
-  - Ezután látogasson el az [Azure Cognitive Services üzembe helyezése Azure stack hubhoz](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) az Azure stack hub-beli Cognitive Services üzembe helyezéséhez. Először regisztrálnia kell az előzetes verzióhoz való hozzáféréshez.
+  - Ezután látogasson el az [Azure Cognitive Services üzembe helyezése Azure stack hubhoz](/azure-stack/user/azure-stack-solution-template-cognitive-services) az Azure stack hub-beli Cognitive Services üzembe helyezéséhez. Először regisztrálnia kell az előzetes verzióhoz való hozzáféréshez.
 - A nem konfigurált Azure Custom Vision AI fejlesztői csomag klónozása vagy letöltése. Részletekért tekintse meg a következő témakört: [AI fejlesztői készlet](https://azure.github.io/Vision-AI-DevKit-Pages/).
 - Regisztráljon Power BI fiókra.
 - Az Azure Cognitive Services Face API az előfizetési kulcs és a végpont URL-címe. A [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api) ingyenes próbaverzióját is elérheti. Vagy kövesse a [Cognitive Services fiók létrehozása](/azure/cognitive-services/cognitive-services-apis-create-account)című témakör utasításait.
 - Telepítse a következő fejlesztői erőforrásokat:
-  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). A Porter használatával a felhőalapú alkalmazásokat üzembe helyezheti az Ön számára biztosított CNAB-csomagbeli jegyzékfájlok használatával.
   - [Visual Studio Code](https://code.visualstudio.com/)

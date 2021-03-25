@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
-  ms.openlocfilehash: 198095c4a96cfcca76a89b47ecc5f716b6b6770a
-  ms.sourcegitcommit: 817b61dd59371b24281419936295da239a2cca18
+  ms.openlocfilehash: 23834253d05753219efbd5b5e15a216741388e8a
+  ms.sourcegitcommit: d218ae31c564b862f2d79bb560075f5983f1771c
   ms.translationtype: MT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 03/23/2021
-  ms.locfileid: "104891083"
+  ms.lasthandoff: 03/24/2021
+  ms.locfileid: "105048918"
 highlightedContent:
   items:
   - title: 'Ignite 2021: hibrid munkamenetek'
@@ -396,6 +396,18 @@ additionalContent:
         text: Hibrid fájlkiszolgáló-infrastruktúra implementálása
       - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
         text: Hibrid biztonsági mentés és helyreállítás implementálása a Windows Server IaaS használatával
+    - title: Windows Server
+      links:
+      - url: /learn/paths/implement-windows-server-hybrid-cloud-infrastructure/
+        text: Hibrid felhős Windows Server-infrastruktúra megvalósítása
+      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+        text: Hibrid biztonsági mentés és helyreállítás implementálása a Windows Server IaaS használatával
+      - url: /learn/modules/implement-hybrid-identity-windows-server/
+        text: Hibrid identitás implementálása a Windows Server használatával
+      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+        text: Windows Server-alapú IaaS virtuális gépek és hibrid példányok monitorozása
+      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+        text: Windows Server-alapú hibrid felhő – felügyelet, monitorozás és biztonság
   - title: További források
     items:
     - title: Általános kérdések

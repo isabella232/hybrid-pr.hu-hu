@@ -1,52 +1,52 @@
 ---
-title: Hibrid minták és megoldási példák az Azure-ra és Azure Stack hub-ra
-description: Az Azure-ban és Azure Stack hub-ban hibrid megoldások megismerésére és megoldására szolgáló hibrid minták és példák áttekintése.
+title: Hibrid minták és megoldáspéékok az Azure-hoz és Azure Stack Hub
+description: Hibrid minták és megoldási példák áttekintése hibrid megoldások tanulására és építésre az Azure-ban és a Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895312"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343858"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Hibrid minták és megoldási példák az Azure-ra és a Azure Stack
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Hibrid megoldások mintái és példái az Azure-hoz és Azure Stack
 
-A Microsoft az Azure-t és Azure Stack termékeket és megoldásokat biztosít egyetlen egységes Azure-ökoszisztémaként. A Microsoft Azure Stack család az Azure kiterjesztése.
+A Microsoft egységes Azure-Azure Stack kínál az Azure-termékek és -megoldások számára. A Microsoft Azure Stack-család az Azure bővítménye.
 
-## <a name="the-hybrid-cloud-and-hybrid-apps"></a>Hibrid Felhőbeli és hibrid alkalmazások
+## <a name="the-hybrid-cloud-and-hybrid-apps"></a>A hibrid felhő és a hibrid alkalmazások
 
-A Azure Stack a felhő-számítástechnika rugalmasságát a helyszíni környezetbe és a peremre helyezi a *hibrid felhő* engedélyezése révén. Azure Stack hub, Azure Stack HCI és Azure Stack Edge kiterjeszti az Azure-t a felhőből a szuverén adatközpontokban, a fiókirodákban, a mezőkben és azon kívül. Ezzel a különböző funkciókkal a következőket teheti:
+Azure Stack a felhőalapú számítástechnika agilitását a helyszíni környezetben és a peremhálózaton is lehetővé teszi egy hibrid *felhő engedélyezésével.* Azure Stack Hub, Azure Stack HCI és Azure Stack Edge kiterjesztheti az Azure-t a felhőből a szuverén adatközpontjaira, fiókirodáira, mezőire stb. Ezzel a sokféle képességgel a következő lehetőségeket használhatja:
 
-- Az Azure-ban és a helyszíni környezetekben konzisztens módon használhat programkódot, és a felhőben natív alkalmazásokat is futtathat.
-- Hagyományos virtualizált számítási feladatok futtatása az Azure-szolgáltatásokhoz való opcionális csatlakozással.
-- Vigye át az adatait a felhőbe, vagy tartsa meg a szuverén adatközpontban a megfelelőség fenntartása érdekében.
-- Hardveres gyorsítású gépi tanulási, tárolós vagy virtualizált munkaterhelések futtatása az intelligens peremhálózat minden részén.
+- A kód újbóli használata és a natív felhőalkalmazások konzisztens futtatása az Azure-ban és a helyszíni környezetekben.
+- Hagyományos virtualizált számítási feladatok futtatása azure-szolgáltatásokkal való választható kapcsolatokkal.
+- A megfelelőség fenntartása érdekében az adatokat a felhőbe továbbíthatja, vagy megtarthatja a szuverén adatközpontban.
+- A hardveresen gyorsított gépi tanulás, tárolók vagy virtualizált számítási feladatok futtatása az intelligens peremhálózaton.
 
-A felhőkre kiterjedő alkalmazásokat *hibrid alkalmazásoknak* is nevezzük. Hibrid felhőalapú alkalmazásokat hozhat létre az Azure-ban, és üzembe helyezheti azokat a csatlakoztatott vagy leválasztott adatközpontban bárhol.
+A felhőkre is áttűnő alkalmazásokat hibrid *alkalmazásoknak is nevezzük.* Hibrid felhőalkalmazásokat építhet az Azure-ban, és üzembe helyezheti őket a csatlakoztatott vagy leválasztott adatközpontban bárhol.
 
-A hibrid alkalmazás-forgatókönyvek nagy mértékben eltérnek a fejlesztéshez rendelkezésre álló erőforrásokkal. Olyan szempontokat is figyelembe kell venniük, mint például a földrajz, a biztonság, az Internet-hozzáférés és egyebek. Bár az itt ismertetett minták és megoldások nem minden követelményre vonatkoznak, útmutatást és példákat biztosítanak a hibrid megoldások megvalósítása során felderített és újbóli felhasználáshoz.
+A hibrid alkalmazások forgatókönyvei nagyban eltérnek a fejlesztéshez rendelkezésre álló erőforrásoktól függően. Emellett olyan szempontokra is vonatkoznak, mint a földrajzi hely, a biztonság, az internet-hozzáférés stb. Bár az itt ismertetett megoldásminták és példák nem minden követelményt elégnek ki, irányelveket és példákat tartalmaznak a hibrid megoldások megvalósítása során történő feltárásra és újbóli használatra.
 
-## <a name="design-patterns"></a>Tervezési minták
+## <a name="solution-patterns"></a>Megoldásminták
 
-A tervezési minták kiselejtezett általánosított kialakítási útmutatást nyújtanak a valós felhasználói forgatókönyvek és a tapasztalatok alapján. A minta absztrakt, amely lehetővé teszi, hogy a különböző típusú forgatókönyvekre vagy vertikális iparágakra alkalmazható legyen. Minden minta dokumentálja a környezetet és a problémát, és áttekintést nyújt a megoldásról. A megoldás példaként a minta lehetséges megvalósítását jelenti.
+A megoldásminták általános, ismételhető tervezési útmutatót tartalmaznak a valós ügyfélforgatókönyvek és -tapasztalatok alapján. A minta absztrakt, így különböző típusú forgatókönyvekre vagy vertikális iparágakra alkalmazható. Minden minta bemutatja a kontextust és a problémát, és áttekintést nyújt egy megoldási példáról. A példamegoldást a minta lehetséges implementációjaként szántuk.
 
-A minták két típusa létezik:
+Kétféle mintacikk létezik:
 
-- Egyetlen minta: tervezési útmutatót biztosít egyetlen általános célú forgatókönyvhöz.
-- Multi-Pattern: tervezési útmutatást biztosít, ahol több minta alkalmazása is használható. Ez a minta gyakran szükséges összetettebb forgatókönyvek vagy iparági problémák megoldásához.
+- Egyetlen minta: tervezési útmutatást nyújt egyetlen általános célú forgatókönyvhöz.
+- Több minta: tervezési útmutatást nyújt több minta alkalmazásához. Ez a minta gyakran szükséges összetettebb forgatókönyvek vagy iparág-specifikus problémák megoldásához.
 
 ## <a name="solution-deployment-guides"></a>Megoldás-üzembehelyezési útmutatók
 
-A lépésenkénti üzembe helyezési útmutatók segítséget nyújtanak a megoldások üzembe helyezésében. Az útmutató a GitHub [Solutions](https://github.com/Azure-Samples/azure-intelligent-edge-patterns)-tárházban tárolt Companion Code-mintára is hivatkozhat.
+A részletes üzembehelyezés útmutatói segítséget nyújtanak egy példamegoldás telepítéséhez. Az útmutató egy további kódmintára is hivatkozhat, amely a GitHub-megoldás mintaadattárában [van tárolva.](https://github.com/Azure-Samples/azure-intelligent-edge-patterns)
 
 ## <a name="next-steps"></a>Következő lépések
 
-- A termékek és megoldások teljes portfóliójának megismeréséhez tekintse meg a [Azure stack termékcsaládot és megoldásokat](/azure-stack) .
-- Ismerkedjen meg a "Patterns" és a "megoldás központi telepítési útmutatók" fejezeteivel a TARTALOMJEGYZÉKben.
-- További információ a [hibrid alkalmazások kialakításával kapcsolatos szempontokról](overview-app-design-considerations.md) : a hibrid alkalmazások tervezéséhez, üzembe helyezéséhez és üzemeltetéséhez szükséges szoftverek minőségi pillérének áttekintése.
-- [Hozzon létre egy fejlesztési környezetet a Azure stackon](/azure-stack/user/azure-stack-dev-start) , és helyezze [üzembe az első alkalmazást](/azure-stack/user/azure-stack-dev-start-deploy-app) Azure stackon.
+- A teljes [termék- Azure Stack termék-](/azure-stack) és megoldás-családról további információt talál a termék- és megoldás-családról.
+- Ismerje meg a használati útmutató "Minták" és "Megoldástelepítési útmutatók" szakaszát, hogy többet tudjon meg mindegyikről.
+- A hibrid [alkalmazások tervezésének szempontjait](overview-app-design-considerations.md) ismertető cikkből áttekintheti a hibrid alkalmazások tervezéséhez, üzembe helyezéséhez és üzembe helyezéséhez szükséges szoftverminőség alappillérét.
+- [Állítson be egy fejlesztési környezetet a Azure Stack](/azure-stack/user/azure-stack-dev-start) és telepítse az első alkalmazását [a](/azure-stack/user/azure-stack-dev-start-deploy-app) Azure Stack.

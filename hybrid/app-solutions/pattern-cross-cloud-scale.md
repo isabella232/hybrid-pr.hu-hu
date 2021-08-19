@@ -1,89 +1,89 @@
 ---
-title: Több felhőre kiterjedő méretezési minta az Azure Stack központban
-description: Megtudhatja, hogyan hozhat létre méretezhető, többfelhős alkalmazást az Azure-ban és Azure Stack hub-on.
+title: Felhők közötti méretezési minta a Azure Stack Hub
+description: Megtudhatja, hogyan építhet ki skálázható, felhők közötti alkalmazást az Azure-ban, és hogyan Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a830f96e97c347cbbcc09a1b17f4836ecb6eb3e6
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 90e0c177b5eaee4d223b4613e0b2ddf385fa799c
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911131"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281261"
 ---
-# <a name="cross-cloud-scaling-pattern"></a>Több felhőre kiterjedő skálázási minta
+# <a name="cross-cloud-scaling-pattern"></a>Felhők közötti méretezési minta
 
-Erőforrások automatikus hozzáadása egy meglévő alkalmazáshoz a terhelés növekedésének kielégítése érdekében.
+Erőforrások automatikus hozzáadása egy meglévő alkalmazáshoz a terhelés növekedése esetén.
 
 ## <a name="context-and-problem"></a>Kontextus és probléma
 
-Az alkalmazás nem növelheti a kapacitást, hogy megfeleljen az igény váratlan növekedésének. A skálázhatóság hiánya azt eredményezi, hogy a felhasználók nem érik el az alkalmazást a csúcsérték-használat idején. Az alkalmazás meghatározott számú felhasználót tud kiszolgálni.
+Az alkalmazás nem tudja növelni a kapacitást, hogy megfeleljen a kereslet váratlan növekedésének. A skálázhatóság hiánya miatt a felhasználók nem érik el az alkalmazást a használati csúcsidőszakban. Az alkalmazás rögzített számú felhasználót képes kiszolgálásra.
 
-A globális vállalatok biztonságos, megbízható és elérhető felhőalapú alkalmazásokat igényelnek. A találkozó az igény szerint növekszik, és a megfelelő infrastruktúra használatával támogatja az igényeket. A vállalatok az üzleti adatbiztonsággal, a tárolással és a valós idejű rendelkezésre állással kapcsolatos költségek és karbantartás egyensúlyával küzdenek.
+A globális vállalatoknak biztonságos, megbízható és elérhető felhőalapú alkalmazásokra van szükségük. A növekvő igényeknek való megfelelő igényeknek való megfelelő infrastruktúra használata kritikus fontosságú. A vállalatok nehezen egyensúlyba hozják a költségeket és a karbantartást az üzleti adatok biztonságával, tárolásával és valós idejű rendelkezésre állásával.
 
-Előfordulhat, hogy nem tudja futtatni az alkalmazást a nyilvános felhőben. Előfordulhat azonban, hogy nem valósítható meg gazdaságosan a vállalat számára, hogy fenntartsa a helyszíni környezetben szükséges kapacitást, hogy kezelni tudja az alkalmazás iránti igényt. Ezzel a mintával a nyilvános felhő rugalmasságát a helyszíni megoldással is használhatja.
+Előfordulhat, hogy nem tudja futtatni az alkalmazást a nyilvános felhőben. Előfordulhat azonban, hogy a vállalat számára nem megvalósítható a helyszíni környezetben szükséges kapacitás fenntartása az alkalmazás iránti kiugróan magas igények kezeléséhez. Ezzel a mintával használhatja a nyilvános felhő rugalmasságát a helyszíni megoldással.
 
 ## <a name="solution"></a>Megoldás
 
-A többfelhős méretezési minta kibővít egy helyi felhőben található alkalmazást, amely nyilvános Felhőbeli erőforrásokkal rendelkezik. A mintát az igény növelésével vagy csökkentésével, illetve a felhőben lévő erőforrások hozzáadásával vagy eltávolításával indítja el a rendszer. Ezek az erőforrások redundanciát, gyors rendelkezésre állást és földrajzilag megfelelő útválasztást biztosítanak.
+A felhők közötti méretezési minta kiterjeszti a helyi felhőben található alkalmazásokat nyilvános felhőbeli erőforrásokkal. A mintát a kereslet növekedése vagy csökkenése váltja ki, és erőforrásokat ad hozzá vagy távolít el a felhőben. Ezek az erőforrások redundanciát, gyors rendelkezésre állást és földrajzi megfelelő útválasztást biztosítanak.
 
-![Több felhőre kiterjedő skálázási minta](media/pattern-cross-cloud-scale/cross-cloud-scaling.png)
+![Felhők közötti méretezési minta](media/pattern-cross-cloud-scale/cross-cloud-scaling.png)
 
 > [!NOTE]
 > Ez a minta csak az alkalmazás állapot nélküli összetevőire vonatkozik.
 
 ## <a name="components"></a>Összetevők
 
-A több felhőre kiterjedő skálázási minta a következő összetevőkből áll.
+A felhők közötti méretezési minta az alábbi összetevőkből áll.
 
 ### <a name="outside-the-cloud"></a>A felhőn kívül
 
 #### <a name="traffic-manager"></a>Traffic Manager
 
-A diagramon ez a nyilvános felhőn kívül esik, de a helyi adatközpontban és a nyilvános felhőben is képesnek kell lennie a forgalom koordinálására. A Balancer magas rendelkezésre állást biztosít az alkalmazás számára a végpontok figyelésével, valamint szükség esetén a feladatátvételi újraelosztás biztosításával.
+Az ábrán ez a nyilvános felhőcsoporton kívül található, de képesnek kell lennie koordinálni a forgalmat a helyi adatközpontban és a nyilvános felhőben is. A balancer magas rendelkezésre állást biztosít az alkalmazások számára a végpontok monitorozásával és szükség esetén a feladatátvétel újraelosztásával.
 
 #### <a name="domain-name-system-dns"></a>Tartománynévrendszer (DNS)
 
-A tartománynévrendszer vagy a DNS a webhely vagy szolgáltatás nevének az IP-címére való fordítására (vagy feloldására) felelős.
+A tartománynévrendszer vagy a DNS felelős egy webhely vagy szolgáltatás nevének AZ IP-címére való lefordításáért (vagy feloldásáért).
 
-### <a name="cloud"></a>Felhő
+### <a name="cloud"></a>Felhőbeli
 
-#### <a name="hosted-build-server"></a>Üzemeltetett Build kiszolgáló
+#### <a name="hosted-build-server"></a>Üzemeltetett buildkiszolgáló
 
-Környezet a build-folyamat üzemeltetéséhez.
+A build-folyamat üzemeltetési környezete.
 
 #### <a name="app-resources"></a>Alkalmazás-erőforrások
 
-Az alkalmazás erőforrásainak képesnek kell lenniük a méretezésre és a vertikális felskálázásra, például a virtuálisgép-méretezési csoportokra és a tárolók méretezésére.
+Az alkalmazás-erőforrásoknak képesnek kell lennie horizontális le- és felskálákra, például virtuálisgép-méretezési készletekre és tárolókra.
 
 #### <a name="custom-domain-name"></a>Egyéni tartománynév
 
-Használjon egyéni tartománynevet a glob útválasztási kérelmekhez.
+Használjon egyéni tartománynevet az útválasztási kérelmekhez.
 
 #### <a name="public-ip-addresses"></a>Nyilvános IP-címek
 
-A nyilvános IP-címek használatával a bejövő forgalom átirányítható a Traffic Managerrel a nyilvános Cloud app Resources végpontra.  
+A nyilvános IP-címek a bejövő forgalmat a Traffic Manageren keresztül a nyilvános felhőalkalmazás erőforrás-végpontjára irányítják.  
 
 ### <a name="local-cloud"></a>Helyi felhő
 
-#### <a name="hosted-build-server"></a>Üzemeltetett Build kiszolgáló
+#### <a name="hosted-build-server"></a>Üzemeltetett buildkiszolgáló
 
-Környezet a build-folyamat üzemeltetéséhez.
+A build-folyamat üzemeltetési környezete.
 
 #### <a name="app-resources"></a>Alkalmazás-erőforrások
 
-Az alkalmazás erőforrásainak képesnek kell lenniük a méretezésre és a vertikális felskálázásra, például a virtuálisgép-méretezési csoportokra és a tárolók tárolására.
+Az alkalmazás-erőforrásoknak szükségük van a horizontális le- és felskálás képességre, például a virtuálisgép-méretezési készletekre és a tárolókra.
 
 #### <a name="custom-domain-name"></a>Egyéni tartománynév
 
-Használjon egyéni tartománynevet a glob útválasztási kérelmekhez.
+Használjon egyéni tartománynevet az útválasztási kérelmekhez.
 
 #### <a name="public-ip-addresses"></a>Nyilvános IP-címek
 
-A nyilvános IP-címek használatával a bejövő forgalom átirányítható a Traffic Managerrel a nyilvános Cloud app Resources végpontra.
+A nyilvános IP-címek a bejövő forgalmat a Traffic Manageren keresztül a nyilvános felhőalkalmazás erőforrás-végpontjára irányítják.
 
 ## <a name="issues-and-considerations"></a>Problémák és megfontolandó szempontok
 
@@ -91,36 +91,36 @@ A minta megvalósítása során az alábbi pontokat vegye figyelembe:
 
 ### <a name="scalability"></a>Méretezhetőség
 
-A többfelhős méretezés fő összetevője az igény szerinti skálázás lehetősége. A skálázásnak a nyilvános és a helyi felhőalapú infrastruktúra között kell történnie, és igény szerint egységes, megbízható szolgáltatást kell biztosítania.
+A felhők közötti skálázás fő összetevője az igény szerinti skálázás képessége. A skálázásnak a nyilvános és a helyi felhőalapú infrastruktúra között kell történnie, és igény szerint konzisztens, megbízható szolgáltatást kell nyújtania.
 
 ### <a name="availability"></a>Rendelkezésre állás
 
-Győződjön meg arról, hogy a helyileg telepített alkalmazások magas rendelkezésre állásra vannak konfigurálva a helyszíni hardverkonfiguráció és a szoftverek központi telepítése révén.
+Győződjön meg arról, hogy a helyileg telepített alkalmazások magas rendelkezésre állásra vannak konfigurálva a helyszíni hardverkonfiguráción és a szoftverek telepítésén keresztül.
 
 ### <a name="manageability"></a>Kezelhetőség
 
-A Felhőbeli mintázat zökkenőmentes felügyeletet és ismerős felületet biztosít a környezetek között.
+A felhők közötti minta zökkenőmentes felügyeletet és ismerős felületet biztosít a környezetek között.
 
 ## <a name="when-to-use-this-pattern"></a>Mikor érdemes ezt a mintát használni?
 
 Használja a következő mintát a következő helyzetekben:
 
-- Ha az alkalmazás kapacitását nem várt igényekkel vagy igény szerinti rendszeres igényekkel kell bővíteni.
-- Ha nem szeretne olyan erőforrásba befektetni, amelyet csak a csúcsok során használunk. A ténylegesen használt funkciókért kell fizetnie.
+- Ha váratlan igényekkel vagy időszakos igényekkel kell növelnie az alkalmazás kapacitását.
+- Ha nem szeretne olyan erőforrásokba befektetni, amelyek csak csúcsidőszakban lesznek használva. A használt használatért kell fizetnie.
 
-Ez a minta nem ajánlott a következő esetekben:
+Ez a minta nem ajánlott, ha:
 
-- A megoldáshoz az interneten keresztül csatlakozó felhasználók szükségesek.
-- Vállalata rendelkezik olyan helyi előírásokkal, amelyek megkövetelik, hogy a kezdeményező kapcsolódás egy helyszíni hívásból történjen.
-- A hálózat olyan rendszeres szűk keresztmetszeteket tapasztal, amelyek korlátozzák a skálázás teljesítményét.
-- A környezet nem kapcsolódik az internethez, és nem éri el a nyilvános felhőt.
+- A megoldáshoz az interneten keresztül csatlakozó felhasználókra van szükség.
+- A vállalata helyi szabályozásokkal rendelkezik, amelyek megkövetelik, hogy az eredeti kapcsolat egy helyszíni hívásból származtatva jöjjön létre.
+- A hálózatban rendszeres szűk keresztmetszetek vannak, amelyek korlátozzák a skálázás teljesítményét.
+- A környezet nem csatlakozik az internethez, és nem tudja elérni a nyilvános felhőt.
 
 ## <a name="next-steps"></a>Következő lépések
 
 További információ a cikkben bemutatott témakörökről:
 
-- A DNS-alapú forgalom terheléselosztó működésével kapcsolatos további információkért tekintse meg az [Azure Traffic Manager áttekintését](/azure/traffic-manager/traffic-manager-overview) .
-- Az ajánlott eljárásokról és a további kérdésekre adott válaszokért lásd a [hibrid alkalmazások kialakításával kapcsolatos szempontokat](overview-app-design-considerations.md) .
-- A termékek és megoldások teljes portfóliójának megismeréséhez tekintse meg a [Azure stack termékcsaládot és megoldásokat](/azure-stack) .
+- A [DNS-Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) terheléselosztási rendszerével kapcsolatos további információkért tekintse meg az Azure Traffic Manager áttekintését.
+- Az [ajánlott eljárásokról](overview-app-design-considerations.md) és a további kérdésekre adott válaszokért tekintse meg a Hibridalkalmazás-kialakítási szempontokat.
+- A Azure Stack [termékek és](/azure-stack) megoldások teljes portfólióját további információért tekintse meg a termék- és megoldás-családról.
 
-Ha készen áll a megoldás tesztelésére, folytassa a [többfelhős méretezési megoldás telepítési útmutatóját](solution-deployment-guide-cross-cloud-scaling.md). A telepítési útmutató részletes útmutatást nyújt az összetevők üzembe helyezéséhez és teszteléséhez. Megtudhatja, hogyan hozhat létre többfelhős megoldást egy olyan manuálisan aktivált folyamat megadására, amely egy Azure Stack hub által üzemeltetett webalkalmazásból egy Azure-ban üzemeltetett webalkalmazásra vált át. Azt is megtudhatja, hogyan használhatja az automatikus skálázást a Traffic Manager használatával, rugalmas és méretezhető felhőalapú segédprogramot biztosítva a betöltés alatt.
+Ha készen áll a megoldás példának tesztelésére, folytassa a többfelhős skálázás megoldás üzembe helyezési [útmutatóját.](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling) Az üzembe helyezési útmutató lépésenként útmutatást nyújt az összetevőinek üzembe helyezéséhez és teszteléséhez. Megtudhatja, hogyan hozhat létre egy többfelhős megoldást, amely manuálisan aktivált folyamatot biztosít a Azure Stack Hub üzemeltetett webalkalmazásról egy Azure-ban üzemeltetett webalkalmazásra való váltáshoz. Azt is megtudhatja, hogyan használhatja az automatikus skálázást a Traffic Managerrel, és hogyan biztosíthatja a rugalmas és méretezhető felhőbeli segédprogramokat terhelés esetén.

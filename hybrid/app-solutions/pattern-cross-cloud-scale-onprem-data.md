@@ -1,140 +1,140 @@
 ---
-title: Többfelhős méretezés (helyszíni adattípusok) az Azure Stack központban
-description: Megtudhatja, hogyan hozhat létre olyan méretezhető, többfelhős alkalmazást, amely helyszíni információkat használ az Azure-ban és Azure Stack hub-ban.
+title: Felhők közötti skálázás (helyszíni adatok) minta a Azure Stack Hub
+description: Ismerje meg, hogyan lehet skálázható, több felhőre átfedő alkalmazást összeépíteni, amely az Azure-ban és az Azure-ban Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: edbb608fbf8e5288f29572bfe4cca98ffb3cb8fc
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5c8e3adb621ae4322bf6d60792fc307dbb24ff90
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911130"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281244"
 ---
-# <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Több felhőre kiterjedő méretezés (helyszíni adattípusok)
+# <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Felhők közötti skálázás (helyszíni adatok) minta
 
-Ismerje meg, hogyan hozhat létre olyan hibrid alkalmazást, amely az Azure-t és Azure Stack hubot is felöleli. Ez a minta azt is bemutatja, hogyan használható egyetlen helyszíni adatforrás a megfelelőséghez.
+Megtudhatja, hogyan építhet ki az Azure-t és az Azure-t Azure Stack Hub. Ez a minta azt is bemutatja, hogyan használható egyetlen helyszíni adatforrás a megfelelőséghez.
 
 ## <a name="context-and-problem"></a>Kontextus és probléma
 
-Számos szervezet nagy mennyiségű bizalmas vásárlói adatot gyűjt és tárol. Gyakran meggátolják, hogy bizalmas adatokat tároljanak a nyilvános felhőben a vállalati rendeletek vagy a közigazgatási szabályzatok miatt. Ezek a szervezetek is szeretnék kihasználni a nyilvános felhő méretezhetőségét. A nyilvános felhő képes kezelni az adatforgalom szezonális csúcsait, így az ügyfeleknek pontosan a szükséges hardverért kell fizetniük, amikor szükségük van rá.
+Számos szervezet gyűjt és tárol nagy mennyiségű bizalmas ügyféladatot. Gyakran előfordul, hogy a vállalati szabályozások vagy kormányzati szabályzatok miatt nem tárolnak bizalmas adatokat a nyilvános felhőben. Ezek a szervezetek a nyilvános felhő méretezhetőségét is szeretnék kihasználni. A nyilvános felhő képes kezelni a forgalom szezonális csúcsát, így az ügyfelek pontosan a szükséges hardverért fizetnek, amikor szükségük van rá.
 
 ## <a name="solution"></a>Megoldás
 
-A megoldás kihasználja a privát felhő megfelelőségi előnyeit, és kombinálja őket a nyilvános felhő méretezhetőségével. Az Azure és a Azure Stack hub Hybrid Cloud egységes felhasználói élményt nyújt a fejlesztőknek. Ez a konzisztencia lehetővé teszi, hogy tudásukat a nyilvános felhőben és a helyszíni környezetekben is alkalmazhatók legyenek.
+A megoldás kihasználja a magánfelhő megfelelőségi előnyeit, és kombinálja őket a nyilvános felhő méretezhetőségével. Az Azure és Azure Stack Hub hibrid felhő konzisztens élményt nyújt a fejlesztőknek. Ez a konzisztencia lehetővé teszi, hogy a nyilvános felhőben és a helyszíni környezetekben is alkalmazza a készségeit.
 
-A megoldás üzembe helyezési útmutatója lehetővé teszi, hogy egy azonos webalkalmazást egy nyilvános és privát felhőbe helyezzen üzembe. A privát felhőben üzemeltetett, nem internetes útválasztású hálózatot is elérheti. A webalkalmazások figyelése betöltésre történik. A forgalom jelentős növekedésével a program a DNS-rekordokat úgy kezeli, hogy átirányítsa a forgalmat a nyilvános felhőbe. Ha a forgalom már nem jelentős, a DNS-rekordok frissülnek, hogy a rendszer visszairányítsa a forgalmat a privát felhőbe.
+A megoldás üzembe helyezési útmutatója lehetővé teszi egy azonos webalkalmazás nyilvános és magánfelhőben való üzembe helyezését. A magánfelhőben üzemeltetett, nem internetes átirányítható hálózatokat is elérheti. A rendszer figyeli a webalkalmazások terhelését. A forgalom jelentős növekedése esetén a program ÚGY módosítja a DNS-rekordokat, hogy átirányítsa a forgalmat a nyilvános felhőbe. Ha a forgalom már nem jelentős, a DNS-rekordok frissülnek, hogy visszairányják a forgalmat a magánfelhőbe.
 
-[![Többfelhős méretezés helyszíni adatmintázattal](media/pattern-cross-cloud-scale-onprem-data/solution-architecture.png)](media/pattern-cross-cloud-scale-onprem-data/solution-architecture.png)
+[![Felhők közötti skálázás a saját adatmintával](media/pattern-cross-cloud-scale-onprem-data/solution-architecture.png)](media/pattern-cross-cloud-scale-onprem-data/solution-architecture.png)
 
 ## <a name="components"></a>Összetevők
 
 Ez a megoldás a következő összetevőket használja:
 
-| Réteg | Összetevő | Description |
+| Réteg | Összetevő | Leírás |
 |----------|-----------|-------------|
-| Azure | Azure App Service | [Azure app Service](/azure/app-service/) lehetővé teszi a webalkalmazások, a REST API-alkalmazások és a Azure functions kiépítését és üzemeltetését. Minden az Ön által választott programozási nyelven, az infrastruktúra kezelése nélkül. |
-| | Azure Virtual Network| Az [azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) az Azure-beli magánhálózatok alapvető építőeleme. A VNet lehetővé teszi több Azure-erőforrástípus, például a virtuális gépek (VM) számára, hogy biztonságosan kommunikáljanak egymással, az internettel és a helyszíni hálózatokkal. A megoldás a további hálózatkezelési összetevők használatát is bemutatja:<br>-alkalmazás-és átjáró-alhálózatok.<br>– helyi hálózati átjáró.<br>-egy virtuális hálózati átjáró, amely helyek közötti VPN Gateway-kapcsolatként működik.<br>– nyilvános IP-cím.<br>-pont – hely típusú VPN-kapcsolat.<br>– Azure DNS a DNS-tartományok üzemeltetéséhez és a névfeloldás biztosításához. |
-| | Azure Traffic Manager | Az [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) egy DNS-alapú forgalom terheléselosztó. Lehetővé teszi a különböző adatközpontokban lévő szolgáltatási végpontok felhasználói forgalmának szabályozását. |
-| | Azure Application Insights | A [Application Insights](/azure/azure-monitor/app/app-insights-overview) egy bővíthető Application Performance Management szolgáltatás a webfejlesztőknek több platformon futó alkalmazások létrehozásához és kezeléséhez.|
-| | Azure Functions | [Azure functions](/azure/azure-functions/) lehetővé teszi a kód kiszolgáló nélküli környezetben történő végrehajtását anélkül, hogy először létre kellene hoznia egy virtuális gépet, vagy közzé kellene tennie egy webalkalmazást. |
-| | Automatikus méretezés az Azure-ban | Az [autoscale](/azure/azure-monitor/platform/autoscale-overview) Cloud Services, virtuális gépek és webalkalmazások beépített funkciója. A funkció lehetővé teszi, hogy az alkalmazások a lehető leghatékonyabban hajtsák végre a változtatásokat. Az alkalmazások a forgalmi csúcsokra változnak, és szükség esetén értesítik a metrikák változásáról és méretezéséről. |
-| Azure Stack hub | IaaS számítás | Azure Stack hub lehetővé teszi, hogy ugyanazt az alkalmazás-modellt, önkiszolgáló portált és az Azure által engedélyezett API-kat használja. Azure Stack hub IaaS széles körű, nyílt forráskódú technológiákat tesz lehetővé a hibrid felhőalapú környezetekben. A megoldás példája egy Windows Server rendszerű virtuális gépet használ SQL Server, például:.|
-| | Azure App Service | Akárcsak az Azure-webalkalmazáshoz, a megoldás a [Azure app Service on Azure stack hub](/azure-stack/operator/azure-stack-app-service-overview) használatával futtatja a webalkalmazást. |
-| | Hálózat | Az Azure Stack hub Virtual Network ugyanúgy működik, mint az Azure Virtual Network. Számos azonos hálózati összetevőt használ, beleértve az egyéni állomásnévket is.
-| Azure DevOps Services | Regisztráció | Gyorsan állíthatja be a létrehozás, a tesztelés és az üzembe helyezés folyamatos integrációját. További információ: [regisztráció, bejelentkezés az Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops). |
-| | Azure Pipelines | [Azure-folyamatokat](/azure/devops/pipelines/agents/agents?view=azure-devops) használhat folyamatos integrációhoz és folyamatos teljesítéshez. Az Azure-folyamatok lehetővé teszik az üzemeltetett Build és Release ügynökök és definíciók kezelését. |
-| | Kódtár | Több kódrészletet is kihasználhat a fejlesztési folyamat leegyszerűsítése érdekében. Meglévő kódrészletek használata a GitHub, a bitbucket, a Dropbox, a OneDrive és az Azure Reposban. |
+| Azure | Azure App Service | [Azure App Service](/azure/app-service/) lehetővé teszi webalkalmazások, RESTful API-alkalmazások és webalkalmazások Azure Functions. Mindezt egy ön által választott programozási nyelven, infrastruktúrakezelés nélkül. |
+| | Azure Virtual Network| [Az Azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) az Azure-beli magánhálózatok alapvető építőeleme. A VNet lehetővé teszi, hogy több Azure-erőforrástípus, például a virtuális gépek (VM) biztonságosan kommunikáljanak egymással, az internettel és a helyszíni hálózatokkal. A megoldás további hálózati összetevők használatát is bemutatja:<br>– alkalmazás- és átjáró-alhálózatok.<br>– helyi helyszíni hálózati átjáró.<br>– egy virtuális hálózati átjáró, amely hely–hely VPN Gateway-kapcsolatként működik.<br>– egy nyilvános IP-cím.<br>– pont–hely VPN-kapcsolat.<br>– Azure DNS DNS-tartományok üzemeltetése és a névfeloldás biztosítása. |
+| | Azure Traffic Manager | [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) egy DNS-alapú forgalom-terheléselosztási rendszer. Lehetővé teszi a felhasználói forgalom elosztásának szabályozását a különböző adatközpontokban a szolgáltatásvégpontokkal. |
+| | Azure Application Insights | [Az Elemzések](/azure/azure-monitor/app/app-insights-overview) alkalmazásteljesítmény-kezelési szolgáltatás olyan webfejlesztők számára, akik több platformon építik fel és kezelik az alkalmazásokat.|
+| | Azure Functions | [Azure Functions](/azure/azure-functions/) lehetővé teszi a kód kiszolgáló nélküli környezetben való végrehajtását anélkül, hogy először létre kell hoznia egy virtuális gépet, vagy közzé kell tennie egy webalkalmazást. |
+| | Automatikus méretezés az Azure-ban | [Az automatikus skálázás](/azure/azure-monitor/platform/autoscale-overview) a virtuális gépek, Cloud Services és webalkalmazások beépített funkciója. A funkció lehetővé teszi, hogy az alkalmazások a lehető legjobban teljesítsen, amikor az igények megváltoznak. Az alkalmazások alkalmazkodnak a kiugró adatforgalomhoz, és értesítik, ha a metrikák változnak, és szükség szerint skáláznak. |
+| Azure Stack Hub | IaaS-számítás | Azure Stack Hub lehetővé teszi, hogy ugyanazt az alkalmazásmodellt, önkiszolgáló portált és az Azure által engedélyezett API-kat használja. Azure Stack Hub IaaS nyílt forráskódú technológiák széles körét teszi lehetővé a konzisztens hibrid felhőalapú környezetek számára. A példamegoldás például egy Windows kiszolgálói virtuális gépet SQL Server virtuális géphez.|
+| | Azure App Service | Az Azure-webalkalmazáshoz Azure App Service megoldás Azure Stack Hub [a](/azure-stack/operator/azure-stack-app-service-overview) webalkalmazást. |
+| | Hálózatkezelés | A Azure Stack Hub Virtual Network pontosan úgy működik, mint az Azure Virtual Network. Számos azonos hálózati összetevőt használ, beleértve az egyéni állomásneveket is.
+| Azure DevOps Services | Regisztráció | Gyorsan beállíthatja a folyamatos integrációt a buildhez, a teszteléshez és az üzembe helyezéshez. További információ: [Regisztráció, bejelentkezés az Azure DevOpsba.](/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops) |
+| | Azure Pipelines | Az [Azure Pipelines használata](/azure/devops/pipelines/agents/agents?view=azure-devops) folyamatos integrációhoz/folyamatos teljesítéshez. Az Azure Pipelines lehetővé teszi az üzemeltetett build- és kiadási ügynökök és definíciók kezelését. |
+| | Kódtár | Több kódtárat is kihasználhat a fejlesztési folyamat leegyszerűsítéséhez. Meglévő kódtárak használata a GitHub, a Bitbucket, Dropbox, OneDrive és az Azure Repos szolgáltatásban. |
 
 ## <a name="issues-and-considerations"></a>Problémák és megfontolandó szempontok
 
-A megoldás megvalósításának eldöntése során vegye figyelembe a következő szempontokat:
+A megoldás megvalósításakor vegye figyelembe a következő pontokat:
 
 ### <a name="scalability"></a>Méretezhetőség
 
-Az Azure és a Azure Stack hub egyedi módon alkalmas a mai globálisan elosztott üzleti igények kielégítésére.
+Az Azure Azure Stack Hub és a szolgáltatások egyedileg illeszkednek napjaink globálisan elosztott vállalkozásának igényeihez.
 
-#### <a name="hybrid-cloud-without-the-hassle"></a>Hibrid felhő a szóváltás nélkül
+#### <a name="hybrid-cloud-without-the-hassle"></a>Hibrid felhő probléma nélkül
 
-A Microsoft a helyszíni eszközök páratlan integrációját kínálja Azure Stack hubhoz és az Azure-hoz egyetlen egységes megoldásban. Ez az integráció kiküszöböli a több ponttal rendelkező megoldások és a felhőalapú szolgáltatók együttes kezelését. A többfelhős méretezéssel az Azure ereje csupán néhány kattintással elérhető. Egyszerűen csatlakoztassa a Azure Stack hub-t az Azure-hoz a Cloud burst használatával, az adatai és alkalmazásai pedig az Azure-ban lesznek elérhetők, ha szükséges.
+A Microsoft a helyszíni eszközök páratlan integrációját kínálja a Azure Stack Hub és az Azure-ral egyetlen egységes megoldásban. Ez az integráció kiküszöböli a többpontos megoldások és a felhőszolgáltatók vegyes kezelésével járó gondokat. A felhők közötti skálázásnak az Azure csupán néhány kattintással elérhető. Egyszerűen csatlakoztassa a Azure Stack Hub azure-hoz a felhőalapú adatlokozással, és az adatok és az alkalmazások szükség esetén elérhetők lesznek az Azure-ban.
 
-- Nem kell másodlagos DR-helyet felépíteni és karbantartani.
-- Időt és pénzt takaríthat meg azáltal, hogy megszünteti a szalagos biztonsági mentést, és akár 99 éves biztonsági mentési adatokkal is rendelkezik az Azure-ban.
-- A felhő gazdaságosságának és rugalmasságának kihasználásához könnyedén áttelepítheti a Hyper-V, a fizikai (előzetes verzió) és a VMware (előzetes verzió) munkaterhelést az Azure-ba.
-- Nagy számítási igényű jelentéseket vagy elemzéseket futtathat az Azure-beli helyszíni eszköz replikált példányán anélkül, hogy ez hatással lenne az éles munkaterhelésekre.
-- A felhőbe, és helyszíni számítási feladatokat futtathat az Azure-ban, és szükség esetén nagyobb számítási sablonokkal. A hibrid lehetőséget biztosít a szükséges teljesítményre, ha szüksége van rá.
-- Hozzon létre többrétegű fejlesztési környezeteket az Azure-ban néhány kattintással – akár az élő éles üzemi adatait is replikálhatja a fejlesztési és tesztelési környezetbe, hogy azok a közel valós idejű szinkronizálásban maradjanak.
+- Nincs szükség másodlagos DR-hely építésére és karbantartására.
+- Időt és pénzt takaríthat meg, ha megszünteti a szalagos biztonsági mentést, és akár 99 éves biztonsági mentési adatokat is ment az Azure-ban.
+- A futó Hyper-V, Fizikai (előzetes verzió) és VMware (előzetes verzió) számítási feladatok egyszerűen mihetők az Azure-ba a felhő gazdasági és rugalmasságának kihasználása érdekében.
+- A számítási feladatok befolyásolása nélkül futtathat nagy számítási igényű jelentéseket vagy elemzéseket a helyszíni adateszköz replikált példányán az Azure-ban.
+- A felhőbe való úsítás és a helyszíni számítási feladatok futtatása az Azure-ban, szükség esetén nagyobb számítási sablonokkal. A Hybrid akkor biztosítja a szükséges teljesítményt, amikor szüksége van rá.
+- Hozzon létre többrétegű fejlesztési környezeteket néhány kattintással az Azure-ban – akár az éles éles adatokat is replikálhatja a fejlesztési/tesztelési környezetbe, hogy közel valós idejű szinkronban tartsa őket.
 
-#### <a name="economy-of-cross-cloud-scaling-with-azure-stack-hub"></a>Felhőbeli skálázások gazdasága Azure Stack hubhoz
+#### <a name="economy-of-cross-cloud-scaling-with-azure-stack-hub"></a>A felhők közötti skálázás gazdasági Azure Stack Hub
 
-A felhő kitörésének legfőbb előnye a gazdaságos megtakarítások. A további erőforrásokért csak akkor kell fizetnie, ha igény van ezekre az erőforrásokra. Nincs több ráfordítás a szükségtelen extra kapacitáshoz, vagy a keresleti csúcsok és ingadozások előrejelzésére van szükség.
+A felhőalapú kiesés fő előnye a gazdaságos megtakarítás. Csak akkor kell fizetnie a további erőforrásokért, ha az erőforrásokra igény van. Nincs több felesleges extra kapacitásra fordított kiadás, vagy a keresleti csúcsok és ingadozások előrejelzése.
 
-#### <a name="reduce-high-demand-loads-into-the-cloud"></a>A felhőbe való magas kereslet csökkentése
+#### <a name="reduce-high-demand-loads-into-the-cloud"></a>A felhőbe irányuló nagy terhelések csökkentése
 
-A több felhőre kiterjedő skálázás felhasználható a terhelések feldolgozására. A Load elosztása az alapszintű alkalmazások nyilvános felhőbe való áthelyezésével történik, és a helyi erőforrásokat felszabadítja az üzleti szempontból kritikus fontosságú alkalmazások számára. Az alkalmazás alkalmazható a privát felhőre, majd a nyilvános felhőre csak akkor lehet szükség, ha az igények kielégítéséhez szükséges.
+A felhők közötti skálázás a feldolgozási terhek csökkentése érdekében használható. A terhelés úgy osztható el, hogy alapszintű alkalmazásokat a nyilvános felhőbe költöztet, és felszabadítja a helyi erőforrásokat az üzletileg kritikus alkalmazások számára. Egy alkalmazás alkalmazható a magánfelhőre, majd a nyilvános felhőbe való áttűnhet, ha az igényeknek megfelelően szükség van rá.
 
 ### <a name="availability"></a>Rendelkezésre állás
 
-A globális üzembe helyezés saját kihívásokkal, például változó kapcsolattal és régiónként eltérő kormányzati szabályozásokkal rendelkezik. A fejlesztők csak egy alkalmazást fejleszthet, majd különböző okok miatt üzembe helyezhetik őket. Telepítse az alkalmazást az Azure nyilvános felhőbe, majd helyileg helyezzen üzembe további példányokat vagy összetevőket. Az Azure használatával kezelheti az összes példány közötti forgalmat.
+A globális üzembe helyezésnek saját kihívásai vannak, például a változó kapcsolatok és a régiókra vonatkozó különböző kormányzati szabályozások. A fejlesztők csak egy alkalmazást fejleszthet, majd különböző okokból különböző követelményekkel helyezhetik üzembe. Az alkalmazás üzembe helyezése a nyilvános Azure-felhőben, majd további példányok vagy összetevők helyi üzembe helyezése. Az Azure-ral kezelheti az összes példány közötti forgalmat.
 
 ### <a name="manageability"></a>Kezelhetőség
 
-#### <a name="a-single-consistent-development-approach"></a>Egyetlen, egységes fejlesztési megközelítés
+#### <a name="a-single-consistent-development-approach"></a>Egyetlen, konzisztens fejlesztési megközelítés
 
-Az Azure és Azure Stack hub lehetővé teszi, hogy a szervezeten belül konzisztens fejlesztési eszközöket használjon. Ez a konzisztencia megkönnyíti a folyamatos integráció és a folyamatos fejlesztés (CI/CD) gyakorlatának megvalósítását. Az Azure-ban vagy Azure Stack hub-ban üzembe helyezett számos alkalmazás és szolgáltatás felcserélhető, és zökkenőmentesen futhat mindkét helyen.
+Az Azure Azure Stack Hub a teljes szervezetben egységes fejlesztői eszközöket használhat. Ez a konzisztencia megkönnyíti a folyamatos integráció és folyamatos fejlesztés (CI/CD) gyakorlatának implementációját. Az Azure-ban vagy az Azure-ban Azure Stack Hub alkalmazások és szolgáltatások felcserélhetők, és zökkenőmentesen futtathatók mindkét helyen.
 
-A hibrid CI/CD-folyamat A következőket nyújtja:
+A hibrid CI-/CD-folyamatok a következőben segíthetnek:
 
-- Hozzon létre egy új Build kód alapján véglegesíti a kódot a tárházba.
-- Az újonnan létrehozott kód automatikus üzembe helyezése az Azure-ban felhasználói elfogadási tesztelés céljából.
-- A kód sikeres tesztelése után a rendszer automatikusan üzembe helyezi az Azure Stack hub-t.
+- Kezdeményezzen egy új buildet a kódtárban való kód véglegesítései alapján.
+- Az újonnan létrehozott kód automatikus üzembe helyezése az Azure-ban a felhasználói elfogadás teszteléséhez.
+- Miután a kód végzett a teszteléssel, automatikusan üzembe helyezheti Azure Stack Hub.
 
-### <a name="a-single-consistent-identity-management-solution"></a>Egyetlen, egységes Identitáskezelés megoldás
+### <a name="a-single-consistent-identity-management-solution"></a>Egyetlen, konzisztens identitáskezelési megoldás
 
-Azure Stack hub a Azure Active Directory (Azure AD) és a Active Directory összevonási szolgáltatások (AD FS) (ADFS) szolgáltatással is működik. Az Azure Stack hub az Azure AD-vel összekapcsolt helyzetekben működik. Olyan környezetek esetén, amelyek nem rendelkeznek kapcsolattal, az ADFS-t leválasztott megoldásként használhatja. Az egyszerű szolgáltatások hozzáférést biztosítanak az alkalmazásokhoz, így az erőforrások üzembe helyezése vagy konfigurálása Azure Resource Manager használatával történik.
+Azure Stack Hub az Azure Active Directory (Azure AD) és a Active Directory összevonási szolgáltatások (AD FS) (ADFS) szolgáltatásokkal is működik. Azure Stack Hub az Azure AD-val csatlakoztatott forgatókönyvekben. Az olyan környezetek esetében, amelyek nem csatlakoznak, az ADFS-t kapcsolat nélküli megoldásként használhatja. A szolgáltatásnévvel hozzáférést adhat az alkalmazásokhoz, így erőforrásokat helyezhet üzembe vagy konfigurálhet a Azure Resource Manager.
 
 ### <a name="security"></a>Biztonság
 
-#### <a name="ensure-compliance-and-data-sovereignty"></a>A megfelelőség és az adatszuverenitás biztosítása
+#### <a name="ensure-compliance-and-data-sovereignty"></a>A megfelelőség és az adatszuverenség biztosítása
 
-Azure Stack hub lehetővé teszi, hogy ugyanazt a szolgáltatást több országban is futtatja, mint ha nyilvános felhőt használ. Ugyanazon alkalmazás üzembe helyezése az adatközpontokban minden országban lehetővé teszi az adatszuverenitási követelmények teljesítését. Ez a funkció biztosítja, hogy a személyes adat az egyes országok határain belül maradjon.
+Azure Stack Hub lehetővé teszi, hogy ugyanazt a szolgáltatást több országban is futtassa, mintha nyilvános felhőt használna. Ha ugyanazt az alkalmazást minden országban adatközpontokban telepíti, akkor teljesülnek az adatok elszuverentségre vonatkozó követelményei. Ez a funkció biztosítja, hogy a személyes adatok az egyes országok határain belül maradnak.
 
-#### <a name="azure-stack-hub---security-posture"></a>Azure Stack hub – biztonsági testhelyzet
+#### <a name="azure-stack-hub---security-posture"></a>Azure Stack Hub – biztonsági rendszer
 
-A folyamatos és folyamatos karbantartási folyamat nélkül nincs biztonsági helyzet. Emiatt a Microsoft egy olyan előkészítési motorba fektetett be, amely a javítások és a frissítések zökkenőmentesen alkalmazható a teljes infrastruktúrán keresztül.
+A biztonság nem megfelelő, folyamatos karbantartási folyamat nélkül. Ezért a Microsoft egy olyan vezénylési motorba fektetett, amely zökkenőmentesen alkalmazza a javításokat és frissítéseket a teljes infrastruktúrára.
 
-A Azure Stack hub OEM-partnerekkel való partneri együttműködésnek köszönhetően a Microsoft ugyanazokat a biztonsági helyzeteket terjeszti ki az OEM-specifikus összetevőkre, például a hardveres életciklus-gazdagépre és a rajta futó szoftverekre. Ez a partnerség biztosítja, hogy Azure Stack hub egységes, stabil biztonsági állapottal rendelkezik a teljes infrastruktúrán belül. Az ügyfelek az alkalmazás számítási feladatait felépíthetik és biztonságossá tehetik.
+A hardvergyártói partnerekkel Azure Stack Hub partneri kapcsolatoknak köszönhetően a Microsoft ugyanezt a biztonsági rendszereket kiterjeszti az OEM-specifikus összetevőkre is, például a hardver életciklus-gazdaszámítógépére és a rajta futó szoftverekre. Ez a partneri kapcsolat Azure Stack Hub, hogy a teljes infrastruktúrában egységes, stabil biztonsági rendszer legyen. Az ügyfelek felépítik és biztonságossá is tehetik az alkalmazás számítási feladatait.
 
-#### <a name="use-of-service-principals-via-powershell-cli-and-azure-portal"></a>Egyszerű szolgáltatásnév használata a PowerShell, a CLI és a Azure Portal segítségével
+#### <a name="use-of-service-principals-via-powershell-cli-and-azure-portal"></a>Szolgáltatásnév használata a PowerShell, a parancssori felület és a Azure Portal
 
-Ha erőforrás-hozzáférést szeretne adni egy parancsfájlhoz vagy alkalmazáshoz, állítson be egy identitást az alkalmazáshoz, és hitelesítse az alkalmazást a saját hitelesítő adataival. Ez az identitás egyszerű szolgáltatásnév, és a következőket teszi lehetővé:
+Ha hozzáférést ad az erőforrásoknak egy szkripthez vagy alkalmazáshoz, állítson be egy identitást az alkalmazáshoz, és hitelesítse az alkalmazást a saját hitelesítő adataival. Ezt az identitást szolgáltatásnévnek is nevezik, és a következőt teszi lehetővé:
 
-- Rendeljen engedélyeket az alkalmazás identitásához, amely eltér a saját engedélyeitől, és az alkalmazás igényeinek megfelelően korlátozódik.
+- Rendeljen olyan engedélyeket az alkalmazásidentitáshoz, amelyek eltérnek a saját engedélyeitől, és pontosan az alkalmazás igényeire vannak korlátozva.
 - Tanúsítvány használata hitelesítéshez szkriptek felügyelet nélküli futtatásakor.
 
-További információ az egyszerű szolgáltatás létrehozásáról és a hitelesítő adatok tanúsítványának használatáról: [alkalmazás-identitás használata az erőforrásokhoz való hozzáféréshez](/azure-stack/operator/azure-stack-create-service-principals).
+A szolgáltatásnév létrehozásával és a hitelesítő adatok tanúsítványának használatával kapcsolatos további információkért lásd: Alkalmazásidentitás használata [erőforrások eléréséhez.](/azure-stack/operator/azure-stack-create-service-principals)
 
 ## <a name="when-to-use-this-pattern"></a>Mikor érdemes ezt a mintát használni?
 
-- A szervezetem DevOps megközelítést használ, vagy a közeljövőben megtervezhető egy terv.
-- CI/CD-gyakorlatot szeretnék megvalósítani az Azure Stack hub implementációjában és a nyilvános felhőben.
-- Konszolidálni szeretném a CI/CD-folyamatot a felhőben és a helyszíni környezetekben.
-- Szeretnék zökkenőmentesen fejleszteni az alkalmazásokat a felhő vagy a helyszíni szolgáltatások használatával.
-- Konzisztens fejlesztői ismereteket szeretnék használni a felhőben és a helyszíni alkalmazásokban.
-- Azure-t használok, de vannak olyan fejlesztők, akik helyszíni Azure Stack hub-felhőben dolgoznak.
-- A helyszíni alkalmazások a szezonális, ciklikus vagy kiszámíthatatlan ingadozások során igénybe veszi a felmerülő igényeket.
-- Helyszíni összetevőkkel rendelkezem, és zökkenőmentesen szeretném méretezni a felhőt.
-- A felhő méretezhetőségét szeretném, de azt szeretném, hogy az alkalmazás a lehető legnagyobb mértékben fusson a helyszínen.
+- A szervezetem DevOps-megközelítést használ, vagy a közeljövőben tervez egyet.
+- CI/CD-eljárásokat szeretnék megvalósítani a Azure Stack Hub és a nyilvános felhőben.
+- Össze szeretném konszolidálni a CI-/CD-folyamatot a felhőben és a helyszíni környezetekben.
+- Zökkenőmentesen szeretnék alkalmazásokat fejleszteni felhőalapú vagy helyszíni szolgáltatásokkal.
+- Konzisztens fejlesztői készségeket szeretnék használni a felhőben és a helyszíni alkalmazásokban.
+- Az Azure-t használom, de vannak fejlesztők, akik egy helyszíni felhőben Azure Stack Hub dolgoznak.
+- A helyszíni alkalmazások igénycsúcsokat tapasztalnak a szezonális, ciklikus vagy kiszámíthatatlan ingadozások során.
+- Helyszíni összetevőkkel is szeretnék együttműködni, és a felhővel szeretném zökkenőmentesen skálázni őket.
+- Skálázhatóságot szeretnék a felhőben, de azt szeretném, hogy az alkalmazás a lehető legnagyobb mértékben fusson a helyszínen.
 
 ## <a name="next-steps"></a>Következő lépések
 
 További információ a cikkben bemutatott témakörökről:
 
-- Tekintse meg az [alkalmazások dinamikus méretezését az adatközpontok és a nyilvános felhő között](https://www.youtube.com/watch?v=2lw8zOpJTn0) a minta használatának áttekintéséhez.
-- További információ az ajánlott eljárásokról és az esetlegesen felmerülő további kérdések megválaszolásáról: a [hibrid alkalmazások kialakításával kapcsolatos szempontok](overview-app-design-considerations.md) .
-- Ez a minta a Azure Stack termékcsaládot használja, beleértve az Azure Stack hub-t is. A termékek és megoldások teljes portfóliójának megismeréséhez tekintse meg a [Azure stack termékcsaládot és megoldásokat](/azure-stack) .
+- Tekintse [meg az alkalmazások adatközpontok és](https://www.youtube.com/watch?v=2lw8zOpJTn0) nyilvános felhő közötti dinamikus skálázása témakört, amely áttekintést nyújt ennek a mintának a használatával.
+- Az [ajánlott eljárásokról](overview-app-design-considerations.md) és az esetleg további kérdésekre adott válaszokért tekintse meg a hibrid alkalmazástervezési szempontokat.
+- Ez a minta a Azure Stack, beleértve a Azure Stack Hub. A teljes [termék- Azure Stack termék-](/azure-stack) és megoldás-családról itt talál további információt.
 
-Ha készen áll a megoldás tesztelésére, folytassa a [többfelhős méretezési (helyszíni adatkezelési) megoldás telepítési útmutatóját](solution-deployment-guide-cross-cloud-scaling-onprem-data.md). A telepítési útmutató részletes útmutatást nyújt az összetevők üzembe helyezéséhez és teszteléséhez.
+Ha készen áll a megoldás példának tesztelésére, folytassa a felhők közötti skálázás [(helyszíni adatok)](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data)megoldás üzembe helyezési útmutatóját. Az üzembe helyezési útmutató lépésenként útmutatást nyújt az összetevőinek üzembe helyezéséhez és teszteléséhez.

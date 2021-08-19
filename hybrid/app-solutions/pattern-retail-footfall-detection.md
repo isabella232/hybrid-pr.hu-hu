@@ -1,44 +1,44 @@
 ---
-title: Lépés hangja észlelési minta az Azure és Azure Stack hub használatával
-description: Ismerje meg, hogyan használható az Azure és a Azure Stack hub a kiskereskedelmi adatforgalom elemzésére szolgáló AI-alapú lépés hangja-észlelési megoldás megvalósításához.
+title: A lábléc észlelési mintája az Azure és a Azure Stack Hub
+description: Megtudhatja, hogyan használhatja az Azure-Azure Stack Hub a kiskereskedelmi adatforgalom elemzésére szolgáló AI-alapú forgalomészlelési megoldást.
 author: BryanLa
 ms.topic: article
 ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.openlocfilehash: 79fb39d418bed53ef6a78980fcd9188bdf6e57ae
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895329"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281278"
 ---
-# <a name="footfall-detection-pattern"></a>Lépés hangja észlelési minta
+# <a name="footfall-detection-pattern"></a>A lábléc észlelési mintája
 
-Ez a minta áttekintést nyújt egy mesterséges intelligencia-alapú lépés hangja-észlelési megoldás megvalósításáról a kiskereskedelmi üzletek látogatói forgalmának elemzéséhez. A megoldás az Azure-ban, Azure Stack hub-on és a Custom Vision AI fejlesztői csomagban bepillantást nyerhet a valós világbeli műveletekkel.
+Ez a minta áttekintést nyújt a kiskereskedelmi üzletek látogatói forgalmának elemzésére szolgáló AI-alapú forgalomészlelési megoldás megvalósításáról. A megoldás valós műveletekből hoz létre elemzéseket az Azure, Azure Stack Hub és a Custom Vision AI Dev Kit használatával.
 
 ## <a name="context-and-problem"></a>Kontextus és probléma
 
-A contoso-áruházak elemzéseket szeretnének kapni arról, hogy az ügyfelek Hogyan kapják meg aktuális termékeiket az áruház elrendezésével kapcsolatban. Nem helyezhetők el a személyzet minden szakaszba, és nem hatékony, hogy az elemzők egy csoportja áttekintse a teljes áruház kamerás felvételeit. Emellett a tárolók egyike sem rendelkezik elegendő sávszélességgel, hogy az összes kameráról a felhőbe továbbítsa a videót elemzés céljából.
+A Contoso Stores szeretne betekintést nyerni arról, hogy az ügyfelek hogyan kapják meg az aktuális termékeket az áruházi elrendezéshez képest. Nem tudnak minden szakaszban munkatársakat bevetni, és nem hatékony, ha egy elemzőcsapat áttekinti egy üzlet teljes kamerafelvételeit. Emellett egyik üzletük sem rendelkezik elegendő sávszélességgel ahhoz, hogy az összes kamerájukból a felhőbe streameljük a videókat elemzés céljából.
 
-A contoso szeretné megkeresni az ügyfelek demográfiai, lojalitási és adatkezelési lehetőségeit a kijelzők és termékek tárolására.
+A Contoso egy diszkrét, adatvédelmet felhasználóbarát módon szeretné meghatározni az ügyfelek demográfiai adatait, hűségét és az áruházi megjelenítésekkel és termékekkel kapcsolatos reakcióit.
 
 ## <a name="solution"></a>Megoldás
 
-Ez a kiskereskedelmi elemzési minta egy lépcsőzetes megközelítést használ a szélén való következtetéshez. A Custom Vision AI dev kit használatával csak az emberi arcokkal rendelkező képek lesznek ellátva az Azure Cognitive Services futtató privát Azure Stack hubhoz való elemzésre. Anonim, összesített adatokat küld az Azure-ba az összes áruházban és vizualizációban Power BI. A peremhálózat és a nyilvános felhő együttes használata lehetővé teszi, hogy a contoso kihasználja a modern AI-technológia előnyeit, miközben a vállalati szabályzatoknak való megfelelés és az ügyfelek magánéletének tiszteletben tartásával is rendelkezik.
+Ez a kiskereskedelmi elemzési minta rétegzett megközelítést használ a peremhálózati dedoktáláshoz. Az AI Dev Kit Custom Vision használatával a rendszer csak emberi arcokat használó képeket küld elemzésre egy privát Azure Stack Hub, amely Azure Cognitive Services. A rendszer anonimizált, összesített adatokat küld az Azure-nak az összes üzlet és vizualizáció összesítése érdekében a Power BI. A peremhálózat és a nyilvános felhő kombinálásával a Contoso kihasználhatja a modern AI-technológiát, miközben továbbra is megfelel a vállalati szabályzatnak, és tiszteletben tartja az ügyfelek adatvédelmét.
 
-[![Lépés hangja-észlelési minta megoldás](media/pattern-retail-footfall-detection/solution-architecture.png)](media/pattern-retail-footfall-detection/solution-architecture.png)
+[![A lábléc-észlelési minta megoldása](media/pattern-retail-footfall-detection/solution-architecture.png)](media/pattern-retail-footfall-detection/solution-architecture.png)
 
-Íme egy összefoglaló a megoldás működéséről:
+Az összefoglalás a megoldás működését összegezve látható:
 
-1. A Custom Vision AI dev Kit IoT Hubtól származó konfigurációt kap, amely telepíti a IoT Edge futtatókörnyezetet és egy ML modellt.
-2. Ha a modell egy személyt lát, egy képet helyez el, és feltölti Azure Stack hub blob Storage-ba.
-3. A blob szolgáltatás elindít egy Azure-függvényt Azure Stack hub-on.
-4. Az Azure-függvény egy tárolót hív meg a Face API, hogy demográfiai és érzelem-adatokhoz kapjon képet.
-5. Az adatküldés egy Azure Event Hubs-fürtbe történik.
-6. A Event Hubs-fürt leküldi az adatStream Analyticsba.
-7. Stream Analytics összesíti az adatokat, és leküldi Power BIre.
+1. Az Custom Vision AI Dev Kit kap egy konfigurációt a IoT Hub-tól, amely telepíti az IoT Edge Runtime-t és egy ML modellt.
+2. Ha a modell egy személyt lát, akkor képet vesz, és feltölti Azure Stack Hub blobtárolóba.
+3. A blobszolgáltatás aktivál egy Azure-függvényt a Azure Stack Hub.
+4. Az Azure-függvény egy Face API-val hív meg egy tárolót, hogy demográfiai és érzelemadatokat kapjunk a képről.
+5. A rendszer anonimizálja az adatokat, és elküldi őket egy Azure Event Hubs fürtnek.
+6. A Event Hubs fürt lek pushed az adatokat a Stream Analytics.
+7. Stream Analytics összesíti az adatokat, és lekullja őket a Power BI.
 
 ## <a name="components"></a>Összetevők
 
@@ -46,46 +46,46 @@ Ez a megoldás a következő összetevőket használja:
 
 | Réteg | Összetevő | Leírás |
 |----------|-----------|-------------|
-| Tárolt hardver | [Custom Vision AI fejlesztői csomag](https://azure.github.io/Vision-AI-DevKit-Pages/) | Egy helyi ML-modell használatával biztosítja az áruházbeli szűrést, amely csak az elemzésre alkalmas személyek képét rögzíti. Biztonságos kiépítés és frissítés IoT Hubon keresztül.<br><br>|
-| Azure | [Azure Event Hubs](/azure/event-hubs/) | Az Azure Event Hubs méretezhető platformot biztosít a Azure Stream Analyticshoz szépen integrálható, névtelenül tárolt adatmennyiségek betöltéséhez. |
-|  | [Azure Stream Analytics](/azure/stream-analytics/) | Az Azure Stream Analytics-feladatok összesítik a névtelen adatokat, és a vizualizációk 15 másodperces Windowsba csoportosítják azokat. |
-|  | [Microsoft Power BI](https://powerbi.microsoft.com/) | A Power BI egy könnyen használható irányítópult-felületet biztosít a Azure Stream Analytics kimenetének megtekintéséhez. |
-| Azure Stack Hub | [APP SERVICE](/azure-stack/operator/azure-stack-app-service-overview) | A App Service erőforrás-szolgáltató (RP) egy alapot biztosít a peremhálózati összetevők számára, beleértve a Web Apps/API-k és függvények üzemeltetési és felügyeleti funkcióit. |
-| | Azure Kubernetes szolgáltatás [(ak) motorjának](https://github.com/Azure/aks-engine) fürtje | A Azure Stack hub-ba telepített AKS-Engine-fürttel rendelkező AK RP méretezhető, rugalmas motort biztosít az Face API tároló futtatásához. |
-| | Azure Cognitive Services [Face API tárolók](/azure/cognitive-services/face/face-how-to-install-containers)| Az Azure Cognitive Services RP Face API tárolókkal biztosítja a demográfiai, érzelem-és egyedi látogatói észlelést a contoso magánhálózaton. |
-| | Blob Storage | Az AI fejlesztői csomagból rögzített rendszerképek fel lesznek töltve az Azure Stack hub blob Storage-tárolóba. |
-| | Azure Functions | Azure Stack hub-on futó Azure-függvény fogadja a blob Storage-ból érkező adatokat, és kezeli az interakciókat a Face API. A rendszer az Azure-ban található Event Hubs-fürtre küldi el a névtelenül való adatgyűjtést.<br><br>|
+| Áruházbeli hardver | [Custom Vision AI Dev Kit](https://azure.github.io/Vision-AI-DevKit-Pages/) | Áruházbeli szűrést biztosít egy helyi ML, amely csak személyek képeit rögzíti elemzés céljából. Biztonságosan kiépítve és frissítve a IoT Hub.<br><br>|
+| Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs olyan skálázható platformot biztosít az anonimizált adatokhoz, amelyek tökéletesen integrálhatók a Azure Stream Analytics. |
+|  | [Azure Stream Analytics](/azure/stream-analytics/) | Egy Azure Stream Analytics feladat összesíti az anonimizált adatokat, és 15 másodperces ablakba csoportosíti őket a vizualizációhoz. |
+|  | [Microsoft Power BI](https://powerbi.microsoft.com/) | Power BI egyszerűen használható irányítópult-felületet biztosít a jelentések kimenetének Azure Stream Analytics. |
+| Azure Stack Hub | [APP SERVICE](/azure-stack/operator/azure-stack-app-service-overview) | A App Service erőforrás-szolgáltató (RP) egy alapként használható a peremhálózati összetevők számára, beleértve a webalkalmazások/API-k és a Functions üzemeltetési és felügyeleti funkcióit. |
+| | Azure Kubernetes Service [(AKS) motorfürt](https://github.com/Azure/aks-engine) | Az AKS RP AKS-Engine fürtben üzembe helyezett Azure Stack Hub méretezhető, rugalmas motort biztosít a Face API-tároló futtatásához. |
+| | Azure Cognitive Services Face [API-tárolók használata](/azure/cognitive-services/face/face-how-to-install-containers)| A Azure Cognitive Services RP a Face API-tárolók használatával demográfiai, érzelem- és egyedi látogatóészlelést biztosít a Contoso magánhálózatán. |
+| | Blob Storage | Az AI Dev Kitből rögzített képek fel vannak töltve Azure Stack Hub blobtárolóba. |
+| | Azure Functions | A szolgáltatáson futó Azure-Azure Stack Hub fogad bemenetet a Blob Storage-ból, és kezeli a Face API-val való interakciókat. Anonimizált adatokat bocsát ki egy Event Hubs Azure-ban található fürtbe.<br><br>|
 
 ## <a name="issues-and-considerations"></a>Problémák és megfontolandó szempontok
 
-A megoldás megvalósításának eldöntése során vegye figyelembe a következő szempontokat:
+A megoldás megvalósításakor vegye figyelembe a következő pontokat:
 
 ### <a name="scalability"></a>Méretezhetőség
 
-Ha engedélyezni szeretné, hogy a megoldás több kamera és hely között is méretezhető legyen, meg kell győződnie arról, hogy az összes összetevő képes kezelni a megnövekedett terhelést. Előfordulhat, hogy olyan műveleteket kell végrehajtania, mint például:
+Ahhoz, hogy ez a megoldás több kamerára és helyre is méretezhető legyen, meg kell győződni arról, hogy az összes összetevő képes kezelni a megnövekedett terhelést. Előfordulhat, hogy a következő műveleteket kell majd eltennünk:
 
-- Növelje Stream Analytics folyamatos átviteli egységek számát.
-- A Face API üzembe helyezésének felskálázása.
-- Növelje a Event Hubs-fürt átviteli sebességét.
-- Szélsőséges esetekben szükség lehet a Azure Functionsról a virtuális gépre való Migrálás.
+- Növelje a streamelési egységek Stream Analytics számát.
+- Skálázja fel horizontálisan a Face API üzembe helyezését.
+- Növelje a Event Hubs átviteli sebességét.
+- Szélsőséges esetben szükség lehet a Azure Functions virtuális gépre való áttelepítésre.
 
 ### <a name="availability"></a>Rendelkezésre állás
 
-Mivel ez a megoldás többrétegű, fontos, hogy meggondolja, hogyan kell kezelni a hálózati vagy áramkimaradásokat. Az üzleti igényektől függően érdemes lehet megvalósítani egy olyan mechanizmust, amely helyileg gyorsítótárazza a lemezképeket, majd a kapcsolat visszaadásakor továbbítja Azure Stack hubhoz. Ha a hely elég nagy, akkor lehet, hogy egy Data Box Edge üzembe helyezése a Face API tárolóval az adott helyen jobb megoldás lehet.
+Mivel ez a megoldás rétegzett, fontos át gondolni, hogyan kell kezelni a hálózat- vagy áramkimaradásokat. Az üzleti igényektől függően érdemes lehet olyan mechanizmust megvalósítani, amely helyileg gyorsítótárazza a rendszerképeket, majd továbbítja a Azure Stack Hub amikor a kapcsolat visszatér. Ha a hely elég nagy, a Data Box Edge-ben a Face API-tárolóval erre a helyre való üzembe helyezése jobb megoldás lehet.
 
 ### <a name="manageability"></a>Kezelhetőség
 
-Ez a megoldás számos eszközre és helyszínre képes, így nem lehet megszerezni a megoldást. Az [Azure IoT-szolgáltatásaival](/azure/iot-fundamentals/) automatikusan online állapotba helyezhetők az új telephelyek és eszközök, és naprakészen tarthatók.
+Ez a megoldás több eszközre és helyre is kihathat, ami problémás lehet. [Az Azure IoT-szolgáltatásaival](/azure/iot-fundamentals/) automatikusan online állapotba hozhatja az új helyeket és eszközöket, és naprakészen tarthatja őket.
 
 ### <a name="security"></a>Biztonság
 
-Ez a megoldás rögzíti a vásárlói rendszerképeket, így a biztonság a legfontosabb szempont. Győződjön meg arról, hogy az összes Storage-fiók biztonságos a megfelelő hozzáférési házirendekkel, és hogy rendszeresen forgatni kívánja a kulcsokat. Győződjön meg arról, hogy a Storage-fiókok és a Event Hubs rendelkeznek a vállalati és kormányzati adatvédelmi szabályozásoknak megfelelő adatmegőrzési szabályzatokkal Győződjön meg arról is, hogy a felhasználói hozzáférési szintek rétegben vannak. A rétegek biztosítása biztosítja, hogy a felhasználók csak a szerepkörük számára szükséges adathoz férhessenek hozzá.
+Ez a megoldás rögzíti az ügyfelek rendszerképét, és kiemelten fontos szempont a biztonság. Győződjön meg arról, hogy az összes tárfiókot a megfelelő hozzáférési szabályzatok biztosítják, és rendszeresen váltogatja a kulcsokat. Győződjön meg arról, hogy a tárfiókok Event Hubs a vállalati és kormányzati adatvédelmi előírásoknak megfelelő adatmegőrzési szabályzatokkal. Ügyeljen arra is, hogy a felhasználói hozzáférési szintek rétege legyen. A rétegezés biztosítja, hogy a felhasználók csak a szerepkörükhöz szükséges adatokhoz férnek hozzá.
 
 ## <a name="next-steps"></a>Következő lépések
 
 További információ a cikkben bemutatott témakörökről:
 
-- Tekintse meg a lépés hangja-észlelési minta által kihasználható, [többszintes adatmintát](https://aka.ms/tiereddatadeploy).
-- További információ az egyéni jövőkép használatáról: [Custom Vision AI fejlesztői csomag](https://azure.github.io/Vision-AI-DevKit-Pages/) . 
+- Lásd: [Rétegzett adatok minta,](https://aka.ms/tiereddatadeploy)amelyet a láblécészlelési minta kihasznál.
+- A [custom vision Custom Vision az AI Dev Kit](https://azure.github.io/Vision-AI-DevKit-Pages/) használatával kapcsolatos további információkért tekintse meg a Custom Vision AI Dev Kitet. 
 
-Ha készen áll a megoldás tesztelésére, folytassa a lépés hangja- [észlelés telepítési útmutatóját](solution-deployment-guide-retail-footfall-detection.md). A telepítési útmutató részletes útmutatást nyújt az összetevők üzembe helyezéséhez és teszteléséhez.
+Ha készen áll a megoldási példa tesztelésére, folytassa a Következő üzembe [helyezési útmutatóval:](/azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection). Az üzembe helyezési útmutató lépésenként útmutatást nyújt az összetevőinek üzembe helyezéséhez és teszteléséhez.

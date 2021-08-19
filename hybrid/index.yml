@@ -31,7 +31,7 @@ highlightedContent:
     - title: 'Ignite 2021: Azure Arc foglalkozások'
       itemType: video
       url: 'https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=" Arc "'
-    - title: 'Ignite 2021: Edge AI-foglalkozások'
+    - title: 'Ignite 2021: Edge AI-munkamenetek'
       itemType: video
       url: 'https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=" AI edge"'
     - title: Modern hibrid alkalmazások kiépítése Azure Arc és Azure Stack
@@ -295,15 +295,15 @@ additionalContent:
               text: Magas rendelkezésre állású Kubernetes-fürt
         - title: Alkalmazásmegoldás-példák üzembe helyezése
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: Több felhőre kiterjedő méretezés
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: DevOps hibrid CI/CD
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: Forgalomszámlálás (kiskereskedelem)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: Földrajzilag elosztott alkalmazás
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: Magas rendelkezésre állású Kubernetes-fürt
     - title: Kiértékelési és oktatási erőforrások
       items:
@@ -328,7 +328,7 @@ additionalContent:
             - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
               text: Bárhol futtatható natív felhős alkalmazások létrehozása
             - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
-              text: Konzisztens hibrid és többfelhős alkalmazások Azure Arc (Szakértők megkérdezik)
+              text: Konzisztens hibrid és többfelhős alkalmazások Azure Arc (szakértők megkérdezik)
             - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
               text: Dinamikus skálázás az Azure Stack Hubról az Azure-ba
             - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
